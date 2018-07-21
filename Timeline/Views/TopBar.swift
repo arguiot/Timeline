@@ -10,6 +10,8 @@ import UIKit
 
 class TopBar: UIView {
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var back: UIButton!
+    @IBOutlet weak var add: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

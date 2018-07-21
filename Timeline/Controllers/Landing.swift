@@ -8,11 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class Landing: UIViewController {
 
+    @IBOutlet weak var TopBar: TopBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        TopBar.back.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
