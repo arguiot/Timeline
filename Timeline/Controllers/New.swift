@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Hero
 
-class New: UIViewController {
+class New: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var TopBar: TopBar!
     
@@ -24,7 +25,10 @@ class New: UIViewController {
         LandingVC?.hero.isEnabled = true
         LandingVC?.hero.modalAnimationType = .pull(direction: .right)
         
-        
+        let edgeGestureRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+        edgeGestureRecognizer.edges = .left
+        edgeGestureRecognizer.delegate = self
+        self.view.addGestureRecognizer(edgeGestureRecognizer)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +38,19 @@ class New: UIViewController {
     @IBAction func LandingVCmove() {
         self.hero.replaceViewController(with: LandingVC!)
     }
-
+    @objc func handlePan(_ sender: UIScreenEdgePanGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            self.hero.replaceViewController(with: LandingVC!)
+        case .changed:
+            let translation = sender.translation(in: nil)
+            let progress = translation.x / 2 / view.bounds.width
+            
+            Hero.shared.update(progress)
+        default:
+            Hero.shared.finish()
+        }
+    }
     /*
     // MARK: - Navigation
 
