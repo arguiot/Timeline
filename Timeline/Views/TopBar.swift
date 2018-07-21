@@ -32,7 +32,7 @@ class TopBar: UIView {
         contentView.layer.shadowOpacity = 1
         contentView.layer.shadowOffset = CGSize(width: 0, height: 5)
         contentView.layer.shadowRadius = 20
-        contentView.layer.shouldRasterize = true
+        contentView.layer.shadowPath = UIBezierPath(rect: contentView.bounds).cgPath
     }
     /*
     // Only override draw() if you perform custom drawing.
