@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Hero
 class TopBar: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var back: UIButton!
@@ -23,6 +23,7 @@ class TopBar: UIView {
         commonInit()
     }
     
+    
     private func commonInit() {
         Bundle.main.loadNibNamed("TopBar", owner: self, options: nil)
         
@@ -35,6 +36,7 @@ class TopBar: UIView {
         contentView.layer.shadowOffset = CGSize(width: 0, height: 5)
         contentView.layer.shadowRadius = 20
         contentView.layer.shadowPath = UIBezierPath(rect: contentView.bounds).cgPath
+        
     }
     /*
     // Only override draw() if you perform custom drawing.

@@ -25,18 +25,11 @@
         <!--Landing-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="Landing" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LandingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="Landing" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ns-qO-CFH" customClass="TopBar" customModule="Timeline" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="O28-Ny-Ese"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="175" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z5N-Ly-M2I">
                                 <rect key="frame" x="0.0" y="100" width="375" height="567"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -114,6 +107,16 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ns-qO-CFH" customClass="TopBar" customModule="Timeline" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="O28-Ny-Ese"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="TopBar"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -122,7 +125,6 @@
                             <constraint firstItem="z5N-Ly-M2I" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Q42-Tl-S0L"/>
                             <constraint firstItem="z5N-Ly-M2I" firstAttribute="top" secondItem="3ns-qO-CFH" secondAttribute="bottom" id="Xck-OH-KmR"/>
                             <constraint firstItem="z5N-Ly-M2I" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gd4-wf-cFw"/>
-                            <constraint firstItem="z5N-Ly-M2I" firstAttribute="top" secondItem="3ns-qO-CFH" secondAttribute="bottom" id="iEX-wH-TL5"/>
                             <constraint firstItem="3ns-qO-CFH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jf7-Z8-TLr"/>
                             <constraint firstItem="z5N-Ly-M2I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oux-wm-Aha"/>
                         </constraints>
@@ -135,6 +137,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="33.733133433283363"/>
+        </scene>
+        <!--New-->
+        <scene sceneID="4AF-M6-zBe">
+            <objects>
+                <viewController storyboardIdentifier="NewVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bid-qH-iWt" customClass="New" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="skH-Q0-zpq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Inv-m7-jO0" customClass="TopBar" customModule="Timeline" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="AL7-DS-ZJh"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="TopBar"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Inv-m7-jO0" firstAttribute="top" secondItem="skH-Q0-zpq" secondAttribute="top" id="Lmd-v3-2LJ"/>
+                            <constraint firstItem="Inv-m7-jO0" firstAttribute="trailing" secondItem="reK-JU-Vxd" secondAttribute="trailing" id="Q4Z-2I-Nvo"/>
+                            <constraint firstItem="Inv-m7-jO0" firstAttribute="leading" secondItem="reK-JU-Vxd" secondAttribute="leading" id="mzV-6t-GDQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="reK-JU-Vxd"/>
+                    </view>
+                    <connections>
+                        <outlet property="TopBar" destination="Inv-m7-jO0" id="8rd-KP-uar"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rTz-rD-qml" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873" y="32"/>
         </scene>
     </scenes>
 </document>
