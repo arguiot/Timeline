@@ -66,6 +66,11 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
             desc.textColor = .black
         }
     }
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text.count > 130 {
+            textView.text = String(textView.text.prefix(130))
+        }
+    }
     func textViewDidEndEditing(_ textView: UITextView) {
         if desc.text.isEmpty {
             desc.text = "Description"
