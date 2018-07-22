@@ -9,9 +9,13 @@
 import UIKit
 import Hero
 
-class New: UIViewController, UIGestureRecognizerDelegate {
+class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
 
     @IBOutlet weak var TopBar: TopBar!
+    
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var desc: UITextView!
+    
     
     var LandingVC: Landing?
     override func viewDidLoad() {
@@ -19,6 +23,10 @@ class New: UIViewController, UIGestureRecognizerDelegate {
 
         // Do any additional setup after loading the view.
         TopBar.add.isHidden = true
+        
+        desc.delegate = self
+        desc.textColor = .lightGray
+        
         
         LandingVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LandingVC") as? Landing
         
@@ -50,6 +58,47 @@ class New: UIViewController, UIGestureRecognizerDelegate {
         default:
             Hero.shared.finish()
         }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if desc.textColor == .lightGray {
+            desc.text = nil
+            desc.textColor = .black
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if desc.text.isEmpty {
+            desc.text = "Description"
+            desc.textColor = .lightGray
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        // Name
+        var border = CALayer()
+        var width = CGFloat(2.0)
+        border.borderColor = #colorLiteral(red: 0.5098039216, green: 0.5098039216, blue: 0.5098039216, alpha: 1)
+        border.frame = CGRect(x: 0,
+                              y: name.frame.size.height - width,
+                              width: name.frame.size.width,
+                              height: name.frame.size.height)
+        
+        border.borderWidth = width
+        name.layer.addSublayer(border)
+        name.layer.masksToBounds = true
+        
+        // Description
+        border = CALayer()
+        width = CGFloat(2.0)
+        border.borderColor = #colorLiteral(red: 0.5098039216, green: 0.5098039216, blue: 0.5098039216, alpha: 1)
+        border.frame = CGRect(x: 0,
+                              y: desc.frame.size.height - width,
+                              width: desc.frame.size.width,
+                              height: desc.frame.size.height)
+        
+        border.borderWidth = width
+        desc.layer.addSublayer(border)
+        desc.layer.masksToBounds = true
     }
     /*
     // MARK: - Navigation
