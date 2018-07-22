@@ -14,6 +14,9 @@
         <array key="Inter-UI-Black.ttf">
             <string>InterUI-Black</string>
         </array>
+        <array key="Inter-UI-Bold.ttf">
+            <string>InterUI-Bold</string>
+        </array>
         <array key="Inter-UI-Medium.ttf">
             <string>InterUI-Medium</string>
         </array>
@@ -109,7 +112,7 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ns-qO-CFH" customClass="TopBar" customModule="Timeline" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="O28-Ny-Ese"/>
                                 </constraints>
@@ -148,7 +151,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Inv-m7-jO0" customClass="TopBar" customModule="Timeline" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="AL7-DS-ZJh"/>
                                 </constraints>
@@ -156,9 +159,29 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="TopBar"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0pT-0W-IC1">
+                                <rect key="frame" x="62" y="145" width="250" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="X0L-ta-NA6"/>
+                                    <constraint firstAttribute="height" constant="50" id="Y5x-UZ-cZb"/>
+                                </constraints>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="InterUI-Bold" family="Inter UI" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P9q-X6-Idz">
+                                <rect key="frame" x="62" y="212" width="250" height="130"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="InterUI-Bold" family="Inter UI" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="0pT-0W-IC1" firstAttribute="centerX" secondItem="skH-Q0-zpq" secondAttribute="centerX" id="15G-EZ-yn9"/>
+                            <constraint firstItem="0pT-0W-IC1" firstAttribute="top" secondItem="Inv-m7-jO0" secondAttribute="bottom" constant="45" id="HGM-Dg-S8i"/>
                             <constraint firstItem="Inv-m7-jO0" firstAttribute="top" secondItem="skH-Q0-zpq" secondAttribute="top" id="Lmd-v3-2LJ"/>
                             <constraint firstItem="Inv-m7-jO0" firstAttribute="trailing" secondItem="reK-JU-Vxd" secondAttribute="trailing" id="Q4Z-2I-Nvo"/>
                             <constraint firstItem="Inv-m7-jO0" firstAttribute="leading" secondItem="reK-JU-Vxd" secondAttribute="leading" id="mzV-6t-GDQ"/>
@@ -167,11 +190,13 @@
                     </view>
                     <connections>
                         <outlet property="TopBar" destination="Inv-m7-jO0" id="8rd-KP-uar"/>
+                        <outlet property="desc" destination="P9q-X6-Idz" id="ovA-oC-6TH"/>
+                        <outlet property="name" destination="0pT-0W-IC1" id="lEB-Wg-gHu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTz-rD-qml" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="873" y="32"/>
+            <point key="canvasLocation" x="872.79999999999995" y="31.934032983508249"/>
         </scene>
     </scenes>
 </document>
