@@ -15,7 +15,9 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
     
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var desc: UITextView!
+    @IBOutlet weak var date: UIDatePicker!
     
+    @IBOutlet weak var Button: Button!
     
     var LandingVC: Landing?
     override func viewDidLoad() {

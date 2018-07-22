@@ -28,6 +28,8 @@
 		6858121D2103BBC7007B6DF3 /* Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6858121C2103BBC7007B6DF3 /* Blur.swift */; };
 		6858121F2103C2F9007B6DF3 /* BorderRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6858121E2103C2F9007B6DF3 /* BorderRadius.swift */; };
 		685812222103C6C0007B6DF3 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685812212103C6C0007B6DF3 /* TodoCell.swift */; };
+		6868380D2105219F00AD930B /* button.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6868380C2105219F00AD930B /* button.xib */; };
+		6868380F210522F200AD930B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6868380E210522F200AD930B /* Button.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -67,6 +69,8 @@
 		6858121C2103BBC7007B6DF3 /* Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blur.swift; sourceTree = "<group>"; };
 		6858121E2103C2F9007B6DF3 /* BorderRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderRadius.swift; sourceTree = "<group>"; };
 		685812212103C6C0007B6DF3 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
+		6868380C2105219F00AD930B /* button.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = button.xib; sourceTree = "<group>"; };
+		6868380E210522F200AD930B /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				685812062103990E007B6DF3 /* TopBar.xib */,
+				6868380C2105219F00AD930B /* button.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				6858121121039B08007B6DF3 /* TopBar.swift */,
+				6868380E210522F200AD930B /* Button.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -243,6 +249,7 @@
 				6858121821039D10007B6DF3 /* Inter-UI-Medium.ttf in Resources */,
 				6858121321039D10007B6DF3 /* Inter-UI-Black.ttf in Resources */,
 				6858121421039D10007B6DF3 /* Inter-UI-BlackItalic.ttf in Resources */,
+				6868380D2105219F00AD930B /* button.xib in Resources */,
 				685811F721027446007B6DF3 /* LaunchScreen.storyboard in Resources */,
 				6858121A21039D10007B6DF3 /* Inter-UI-Regular.ttf in Resources */,
 				6858121721039D10007B6DF3 /* Inter-UI-Italic.ttf in Resources */,
@@ -265,6 +272,7 @@
 				680793252103CE5A00066F69 /* New.swift in Sources */,
 				685811EF21027443007B6DF3 /* Landing.swift in Sources */,
 				685812222103C6C0007B6DF3 /* TodoCell.swift in Sources */,
+				6868380F210522F200AD930B /* Button.swift in Sources */,
 				6858121221039B08007B6DF3 /* TopBar.swift in Sources */,
 				6858121D2103BBC7007B6DF3 /* Blur.swift in Sources */,
 				6858121F2103C2F9007B6DF3 /* BorderRadius.swift in Sources */,

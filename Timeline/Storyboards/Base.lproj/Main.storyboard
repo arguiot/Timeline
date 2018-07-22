@@ -169,27 +169,51 @@
                                 <fontDescription key="fontDescription" name="InterUI-Bold" family="Inter UI" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P9q-X6-Idz">
-                                <rect key="frame" x="62" y="212" width="250" height="130"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P9q-X6-Idz">
+                                <rect key="frame" x="62" y="210" width="250" height="130"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="eob-fe-EXF"/>
+                                    <constraint firstAttribute="height" constant="130" id="yGk-NI-QqJ"/>
+                                </constraints>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="InterUI-Bold" family="Inter UI" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="XNR-ik-I4k">
+                                <rect key="frame" x="0.0" y="370" width="375" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="HiM-67-Guf"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="553984199.96563303">
+                                    <!--2018-07-22 20:29:59 +0000-->
+                                </date>
+                            </datePicker>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ty-MK-vsy" customClass="Button" customModule="Timeline" customModuleProvider="target">
+                                <rect key="frame" x="137" y="597" width="100" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0pT-0W-IC1" firstAttribute="centerX" secondItem="skH-Q0-zpq" secondAttribute="centerX" id="15G-EZ-yn9"/>
                             <constraint firstItem="0pT-0W-IC1" firstAttribute="top" secondItem="Inv-m7-jO0" secondAttribute="bottom" constant="45" id="HGM-Dg-S8i"/>
                             <constraint firstItem="Inv-m7-jO0" firstAttribute="top" secondItem="skH-Q0-zpq" secondAttribute="top" id="Lmd-v3-2LJ"/>
+                            <constraint firstItem="XNR-ik-I4k" firstAttribute="top" secondItem="P9q-X6-Idz" secondAttribute="bottom" constant="30" id="Mke-EK-Xkc"/>
                             <constraint firstItem="Inv-m7-jO0" firstAttribute="trailing" secondItem="reK-JU-Vxd" secondAttribute="trailing" id="Q4Z-2I-Nvo"/>
+                            <constraint firstItem="P9q-X6-Idz" firstAttribute="centerX" secondItem="skH-Q0-zpq" secondAttribute="centerX" id="m9S-2v-ZnS"/>
                             <constraint firstItem="Inv-m7-jO0" firstAttribute="leading" secondItem="reK-JU-Vxd" secondAttribute="leading" id="mzV-6t-GDQ"/>
+                            <constraint firstItem="P9q-X6-Idz" firstAttribute="top" secondItem="0pT-0W-IC1" secondAttribute="bottom" constant="15" id="pzW-fn-8Kt"/>
+                            <constraint firstItem="XNR-ik-I4k" firstAttribute="trailing" secondItem="reK-JU-Vxd" secondAttribute="trailing" id="uyL-4j-nO1"/>
+                            <constraint firstItem="XNR-ik-I4k" firstAttribute="leading" secondItem="reK-JU-Vxd" secondAttribute="leading" id="yEk-gr-NFi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="reK-JU-Vxd"/>
                     </view>
                     <connections>
+                        <outlet property="Button" destination="2ty-MK-vsy" id="Wz0-JT-veI"/>
                         <outlet property="TopBar" destination="Inv-m7-jO0" id="8rd-KP-uar"/>
+                        <outlet property="date" destination="XNR-ik-I4k" id="R06-uI-Uyb"/>
                         <outlet property="desc" destination="P9q-X6-Idz" id="ovA-oC-6TH"/>
                         <outlet property="name" destination="0pT-0W-IC1" id="lEB-Wg-gHu"/>
                     </connections>
