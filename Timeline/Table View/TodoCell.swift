@@ -33,7 +33,8 @@ class TodoCell: UITableViewCell {
         
         let d1d2 = Float(todo.date.timeIntervalSince(todo.initDate))
         let nowd2 = Float(Date().timeIntervalSince(todo.initDate))
-        let p = nowd2 / d1d2
+        let p = 1 - nowd2 / d1d2  // due to gradient (we're reversing the bar)
+
         progressView.progress.progress = p
         
         style()
