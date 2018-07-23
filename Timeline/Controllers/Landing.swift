@@ -8,6 +8,7 @@
 
 import UIKit
 import Hero
+import CloudKit
 
 class Landing: UIViewController {
 
@@ -32,6 +33,30 @@ class Landing: UIViewController {
     @IBAction func NewVCmove() {
         self.hero.replaceViewController(with: NewVC)
     }
+    
+    var todos = [ToDos]()
+    func loadData() {
+        let container = CKContainer.default()
+        let privateC = container.privateCloudDatabase
+        
+    }
 
+}
+
+extension Landing: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return todos.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let todo = todos[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell") as! TodoCell
+        
+        cell.setValues(todo: todo)
+        return cell
+    }
+    
+    
 }
 

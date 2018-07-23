@@ -14,4 +14,12 @@ class TodoCell: UITableViewCell {
     @IBOutlet weak var desc: UILabel!
     @IBOutlet weak var date: UILabel!
     
+    func setValues(todo: ToDos) {
+        title.text = todo.name
+        desc.text = todo.desc
+        let formatter = DateFormatter()
+        // initially set the format based on your datepicker date / server String
+        formatter.dateFormat = "dd MM - hh:mm"
+        date.text = formatter.string(from: todo.date)
+    }
 }
