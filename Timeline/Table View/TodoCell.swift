@@ -15,18 +15,26 @@ class TodoCell: UITableViewCell {
     @IBOutlet weak var date: UILabel!
     
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var progressView: Progress!
     
     func setValues(todo: ToDos) {
         title.text = todo.name
+        
         var end = "\n\n\n\n"
         todo.desc.enumerateLines { (str, _) in
             end = String(end.dropLast(2))
         }
         desc.text = todo.desc + end
+        
         let formatter = DateFormatter()
         // initially set the format based on your datepicker date / server String
         formatter.dateFormat = "E, dd MMM HH:mm"
         date.text = formatter.string(from: todo.date)
+        
+        let d1d2 = Float(todo.date.timeIntervalSince(todo.initDate))
+        let nowd2 = Float(Date().timeIntervalSince(todo.initDate))
+        let p = nowd2 / d1d2
+        progressView.progress.progress = p
         
         style()
     }

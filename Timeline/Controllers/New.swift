@@ -120,6 +120,10 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
         db.save(todo) { (record, error) in
             print(record, error)
         }
+        LandingVC?.todos.append(
+            ToDos(name: name.text!, desc: desc.text, date: date.date, initDate: Date())
+        )
+        LandingVCmove()
     }
     /*
     // MARK: - Navigation

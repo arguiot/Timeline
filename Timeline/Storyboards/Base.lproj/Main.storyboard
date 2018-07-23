@@ -17,9 +17,6 @@
         <array key="Inter-UI-Bold.ttf">
             <string>InterUI-Bold</string>
         </array>
-        <array key="Inter-UI-Medium.ttf">
-            <string>InterUI-Medium</string>
-        </array>
         <array key="Inter-UI-Regular.ttf">
             <string>InterUI-Regular</string>
         </array>
@@ -75,7 +72,7 @@
                                                         <constraint firstAttribute="height" constant="80" id="6QU-ia-Q8v"/>
                                                     </constraints>
                                                     <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque velit quam, cursus ut laoreet eget, euismod vel sem. Vivamus gravida turpis ac augue lobortis.</string>
-                                                    <fontDescription key="fontDescription" name="InterUI-Medium" family="Inter UI" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="InterUI-Bold" family="Inter UI" pointSize="14"/>
                                                     <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -88,13 +85,23 @@
                                                     <color key="textColor" red="0.56470588235294117" green="0.56470588235294117" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mXQ-mr-TuF" customClass="Progress" customModule="Timeline" customModuleProvider="target">
+                                                    <rect key="frame" x="67" y="164" width="240" height="10"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="240" id="4Bp-gN-uGh"/>
+                                                        <constraint firstAttribute="height" constant="10" id="dza-L8-Cuz"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="JBA-Zw-0fo" firstAttribute="leading" secondItem="uf2-fw-Swt" secondAttribute="leadingMargin" constant="52" id="1PR-gI-ShK"/>
                                                 <constraint firstItem="bbm-xh-S53" firstAttribute="centerX" secondItem="uf2-fw-Swt" secondAttribute="centerX" id="2Hf-sE-hUO"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="mXQ-mr-TuF" secondAttribute="bottom" constant="15" id="6E8-RK-RIS"/>
                                                 <constraint firstItem="Bp2-lG-RMA" firstAttribute="leading" secondItem="uf2-fw-Swt" secondAttribute="leadingMargin" constant="52" id="6mg-Fm-NGo"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="JBA-Zw-0fo" secondAttribute="trailing" constant="53" id="CbK-1g-iPc"/>
                                                 <constraint firstItem="Bp2-lG-RMA" firstAttribute="top" secondItem="uf2-fw-Swt" secondAttribute="topMargin" constant="10" id="G3O-i9-1ju"/>
+                                                <constraint firstItem="mXQ-mr-TuF" firstAttribute="centerX" secondItem="uf2-fw-Swt" secondAttribute="centerX" id="G5x-1i-qch"/>
                                                 <constraint firstItem="bbm-xh-S53" firstAttribute="centerY" secondItem="uf2-fw-Swt" secondAttribute="centerY" id="InN-po-b3E"/>
                                                 <constraint firstItem="JBA-Zw-0fo" firstAttribute="top" secondItem="OBG-rZ-ijE" secondAttribute="bottom" constant="8" id="RvA-Kp-MYe"/>
                                                 <constraint firstItem="OBG-rZ-ijE" firstAttribute="top" secondItem="uf2-fw-Swt" secondAttribute="topMargin" constant="25" id="en6-jm-Txx"/>
@@ -107,6 +114,7 @@
                                             <outlet property="button" destination="bbm-xh-S53" id="oBh-8C-4sn"/>
                                             <outlet property="date" destination="Bp2-lG-RMA" id="G0C-44-piV"/>
                                             <outlet property="desc" destination="JBA-Zw-0fo" id="Tbs-RS-8vc"/>
+                                            <outlet property="progressView" destination="mXQ-mr-TuF" id="SWV-Ab-iNg"/>
                                             <outlet property="title" destination="OBG-rZ-ijE" id="Xpy-Nl-VWz"/>
                                         </connections>
                                     </tableViewCell>
