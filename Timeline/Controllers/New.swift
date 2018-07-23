@@ -8,6 +8,7 @@
 
 import UIKit
 import Hero
+import CloudKit
 
 class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
 
@@ -106,6 +107,19 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
         border.borderWidth = width
         desc.layer.addSublayer(border)
         desc.layer.masksToBounds = true
+    }
+    
+    let db = CKContainer.default().privateCloudDatabase
+    @IBAction func saveToDo(_ sender: Any?) {
+        let todo = CKRecord(recordType: "ToDos")
+        todo.setValue(name.text, forKey: "name")
+        todo.setValue(desc.text, forKey: "desc")
+        todo.setValue(date.date, forKey: "date")
+        todo.setValue(Date(), forKey: "initDate")
+        
+        db.save(todo) { (record, error) in
+            print(record, error)
+        }
     }
     /*
     // MARK: - Navigation

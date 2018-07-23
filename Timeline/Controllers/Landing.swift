@@ -13,6 +13,7 @@ import CloudKit
 class Landing: UIViewController {
 
     @IBOutlet weak var TopBar: TopBar!
+    @IBOutlet weak var TableView: UITableView!
     
     let NewVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewVC") as! New
     override func viewDidLoad() {
@@ -24,6 +25,8 @@ class Landing: UIViewController {
         
         NewVC.hero.isEnabled = true
         NewVC.hero.modalAnimationType = .pull(direction: .left)
+        
+        loadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,10 +38,23 @@ class Landing: UIViewController {
     }
     
     var todos = [ToDos]()
+    
+    let db = CKContainer.default().privateCloudDatabase
     func loadData() {
-        let container = CKContainer.default()
-        let privateC = container.privateCloudDatabase
-        
+         let query = CKQuery(recordType: "ToDos", predicate: NSPredicate(value: true))
+        db.perform(query, inZoneWith: nil) { (records, error) in
+            print(records, error)
+            guard let records = records else { return }
+            for record in records {
+                self.todos.append(ToDos(name: record.value(forKey: "name") as! String,
+                                        desc: record.value(forKey: "desc") as! String,
+                                        date: record.value(forKey: "date") as! Date,
+                                        initDate: record.value(forKey: "initDate") as! Date))
+            }
+            DispatchQueue.main.async {
+                self.TableView.reloadData()
+            }
+        }
     }
 
 }

@@ -138,6 +138,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="TableView" destination="z5N-Ly-M2I" id="59b-B6-TDf"/>
                         <outlet property="TopBar" destination="3ns-qO-CFH" id="jgY-Dy-AwH"/>
                     </connections>
                 </viewController>

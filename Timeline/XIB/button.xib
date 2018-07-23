@@ -31,6 +31,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OcX-WL-Fz4">
                     <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
                     <state key="normal" image="Done"/>
+                    <connections>
+                        <action selector="saveToDo:" destination="-2" eventType="touchUpInside" id="BdC-zP-FPU"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
