@@ -26,6 +26,8 @@ class Landing: UIViewController {
         NewVC.hero.isEnabled = true
         NewVC.hero.modalAnimationType = .pull(direction: .left)
         
+        TableView.contentInset = UIEdgeInsets(top: 50,left: 0,bottom: 0,right: 0)
+        
         loadData()
     }
 
@@ -41,9 +43,12 @@ class Landing: UIViewController {
     
     let db = CKContainer.default().privateCloudDatabase
     func loadData() {
-         let query = CKQuery(recordType: "ToDos", predicate: NSPredicate(value: true))
+        let query = CKQuery(recordType: "ToDos", predicate: NSPredicate(value: true))
+        // Last created first
+        query.sortDescriptors = [NSSortDescriptor(key: "initDate", ascending: false)]
+        
         db.perform(query, inZoneWith: nil) { (records, error) in
-            print(records, error)
+            print("Log: \(error)")
             guard let records = records else { return }
             for record in records {
                 self.todos.append(ToDos(name: record.value(forKey: "name") as! String,

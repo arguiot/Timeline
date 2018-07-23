@@ -132,3 +132,11 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
     */
 
 }
+
+extension New: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        let newLength = text.count + string.count - range.length
+        return newLength <= 10 // Bool
+    }
+}
