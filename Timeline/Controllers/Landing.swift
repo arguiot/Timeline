@@ -26,6 +26,9 @@ class Landing: UIViewController {
         NewVC.hero.isEnabled = true
         NewVC.hero.modalAnimationType = .pull(direction: .left)
         
+        SelectVC.hero.isEnabled = true
+        SelectVC.hero.modalAnimationType = .zoom
+        
         TableView.contentInset = UIEdgeInsets(top: 50,left: 0,bottom: 0,right: 0)
         
         loadData()
@@ -60,6 +63,14 @@ class Landing: UIViewController {
                 self.TableView.reloadData()
             }
         }
+    }
+    
+    let SelectVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SelectVC") as! Select
+    @IBAction func SelectVCmove() {
+        SelectVC.img = self.view.asImage()
+        
+        
+        self.hero.replaceViewController(with: SelectVC)
     }
 
 }

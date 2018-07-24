@@ -56,6 +56,9 @@
                                                             <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="SelectVCmove" destination="dkx-z0-nzr" eventType="touchUpInside" id="oUN-VF-xiK"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBG-rZ-ijE">
                                                     <rect key="frame" x="67" y="36" width="240" height="30"/>
@@ -240,6 +243,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTz-rD-qml" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="872.79999999999995" y="31.934032983508249"/>
+        </scene>
+        <!--Select-->
+        <scene sceneID="hfe-SH-6Fx">
+            <objects>
+                <viewController storyboardIdentifier="SelectVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="76U-sb-g8E" customClass="Select" customModule="Timeline" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xGx-NZ-duD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ea5-Iv-H35">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6NF-aC-ok9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <action selector="LandingVCmove:" destination="76U-sb-g8E" eventType="touchUpInside" id="hUR-ZU-8an"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6NF-aC-ok9" firstAttribute="top" secondItem="xGx-NZ-duD" secondAttribute="top" id="9Hi-AB-dkU"/>
+                            <constraint firstAttribute="trailing" secondItem="Ea5-Iv-H35" secondAttribute="trailing" id="MrT-kj-SgC"/>
+                            <constraint firstItem="Ea5-Iv-H35" firstAttribute="top" secondItem="xGx-NZ-duD" secondAttribute="top" id="PzS-Zw-M5E"/>
+                            <constraint firstItem="Ea5-Iv-H35" firstAttribute="leading" secondItem="xGx-NZ-duD" secondAttribute="leading" id="evt-TE-0Qp"/>
+                            <constraint firstItem="6NF-aC-ok9" firstAttribute="leading" secondItem="sZo-ob-8RV" secondAttribute="leading" id="k5v-nU-S2h"/>
+                            <constraint firstItem="6NF-aC-ok9" firstAttribute="bottom" secondItem="sZo-ob-8RV" secondAttribute="bottom" id="uD2-GZ-cvu"/>
+                            <constraint firstAttribute="bottom" secondItem="Ea5-Iv-H35" secondAttribute="bottom" id="x4n-fZ-ESy"/>
+                            <constraint firstItem="6NF-aC-ok9" firstAttribute="trailing" secondItem="sZo-ob-8RV" secondAttribute="trailing" id="ya3-ep-Wtq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sZo-ob-8RV"/>
+                    </view>
+                    <connections>
+                        <outlet property="bluredBG" destination="Ea5-Iv-H35" id="eiT-yi-VPc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vmg-X6-Glp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1696.8" y="32.833583208395808"/>
         </scene>
     </scenes>
 </document>
