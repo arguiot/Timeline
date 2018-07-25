@@ -38,7 +38,7 @@
                                         <rect key="frame" x="0.0" y="50" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Ah-iT-Kea" id="uf2-fw-Swt">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbm-xh-S53" customClass="TBButton" customModule="Timeline" customModuleProvider="target">
@@ -216,10 +216,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="HZb-Jw-VaD">
+                                <rect key="frame" x="177" y="323.5" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="qgt-i3-Ovy"/>
+                                    <constraint firstAttribute="height" constant="20" id="qpx-gF-IWb"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0pT-0W-IC1" firstAttribute="centerX" secondItem="skH-Q0-zpq" secondAttribute="centerX" id="15G-EZ-yn9"/>
+                            <constraint firstItem="HZb-Jw-VaD" firstAttribute="centerY" secondItem="skH-Q0-zpq" secondAttribute="centerY" id="DxZ-QC-atw"/>
                             <constraint firstItem="0pT-0W-IC1" firstAttribute="top" secondItem="Inv-m7-jO0" secondAttribute="bottom" constant="45" id="HGM-Dg-S8i"/>
                             <constraint firstItem="Inv-m7-jO0" firstAttribute="top" secondItem="skH-Q0-zpq" secondAttribute="top" id="Lmd-v3-2LJ"/>
                             <constraint firstItem="XNR-ik-I4k" firstAttribute="top" secondItem="P9q-X6-Idz" secondAttribute="bottom" constant="30" id="Mke-EK-Xkc"/>
@@ -227,6 +235,7 @@
                             <constraint firstItem="P9q-X6-Idz" firstAttribute="centerX" secondItem="skH-Q0-zpq" secondAttribute="centerX" id="m9S-2v-ZnS"/>
                             <constraint firstItem="Inv-m7-jO0" firstAttribute="leading" secondItem="reK-JU-Vxd" secondAttribute="leading" id="mzV-6t-GDQ"/>
                             <constraint firstItem="P9q-X6-Idz" firstAttribute="top" secondItem="0pT-0W-IC1" secondAttribute="bottom" constant="15" id="pzW-fn-8Kt"/>
+                            <constraint firstItem="HZb-Jw-VaD" firstAttribute="centerX" secondItem="skH-Q0-zpq" secondAttribute="centerX" id="skh-3y-qSp"/>
                             <constraint firstItem="XNR-ik-I4k" firstAttribute="trailing" secondItem="reK-JU-Vxd" secondAttribute="trailing" id="uyL-4j-nO1"/>
                             <constraint firstItem="XNR-ik-I4k" firstAttribute="leading" secondItem="reK-JU-Vxd" secondAttribute="leading" id="yEk-gr-NFi"/>
                         </constraints>
@@ -237,6 +246,7 @@
                         <outlet property="TopBar" destination="Inv-m7-jO0" id="8rd-KP-uar"/>
                         <outlet property="date" destination="XNR-ik-I4k" id="R06-uI-Uyb"/>
                         <outlet property="desc" destination="P9q-X6-Idz" id="ovA-oC-6TH"/>
+                        <outlet property="loading" destination="HZb-Jw-VaD" id="SJb-Pw-xh8"/>
                         <outlet property="name" destination="0pT-0W-IC1" id="lEB-Wg-gHu"/>
                     </connections>
                 </viewController>

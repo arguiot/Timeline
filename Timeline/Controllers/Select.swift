@@ -14,6 +14,7 @@ class Select: UIViewController {
     @IBOutlet weak var bluredBG: UIImageView!
     
     var cell: ToDos?
+    var todos = [ToDos]()
     
     var img = UIImage()
     
@@ -30,6 +31,7 @@ class Select: UIViewController {
         LandingVC?.hero.isEnabled = true
         LandingVC?.hero.modalAnimationType = .zoomOut
         
+        
         print(cell?.name)
     }
 
@@ -43,10 +45,14 @@ class Select: UIViewController {
     
     let db = CKContainer.default().privateCloudDatabase
     @IBAction func deleteToDo() {
-        
+        let i = LandingVC?.todos.index(of: cell!) ?? 0
         db.delete(withRecordID: (cell?.record)!) { (id, error) in
             print("Deleted row \(id): \(error)")
         }
+        
+        todos.remove(at: Int(i))
+        
+        LandingVC?.todos = todos
         LandingVCmove(self)
     }
     /*

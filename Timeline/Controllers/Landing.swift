@@ -69,6 +69,7 @@ class Landing: UIViewController {
     @IBAction func SelectVCmode(_ sender: TBButton) {
         SelectVC.img = self.view.asImage()
         SelectVC.cell = todos[sender.row!]
+        SelectVC.todos = todos
         
         self.hero.replaceViewController(with: SelectVC)
     }

@@ -9,7 +9,14 @@
 import Foundation
 import CloudKit
 
-class ToDos {
+class ToDos: Equatable {
+    static func == (lhs: ToDos, rhs: ToDos) -> Bool {
+        if (lhs.record == rhs.record && lhs.name == rhs.name) {
+            return true
+        }
+        return false
+    }
+    
     var name: String
     var desc: String
     var date: Date

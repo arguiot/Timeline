@@ -20,11 +20,15 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
     
     @IBOutlet weak var Button: Button!
     
+    @IBOutlet weak var loading: UIActivityIndicatorView!
+    
     var LandingVC: Landing?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        loading.isHidden = true
+        
         TopBar.add.isHidden = true
         
         desc.delegate = self
@@ -111,21 +115,25 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
     
     let db = CKContainer.default().privateCloudDatabase
     @IBAction func saveToDo(_ sender: Any?) {
+        self.view.isUserInteractionEnabled = false
+        loading.isHidden = false
+        
         let todo = CKRecord(recordType: "ToDos")
         todo.setValue(name.text, forKey: "name")
         todo.setValue(desc.text, forKey: "desc")
         todo.setValue(date.date, forKey: "date")
         todo.setValue(Date(), forKey: "initDate")
         
-        var Record: CKRecord?
         db.save(todo) { (record, error) in
-            Record = record
+            DispatchQueue.main.async {
+                self.LandingVC?.todos.append(ToDos(name: self.name.text!,
+                                                   desc: self.desc.text,
+                                                   date: self.date.date,
+                                                   initDate: Date(),
+                                                   record: record?.recordID))
+                self.LandingVCmove()
+            }
         }
-        LandingVC?.todos.append(
-            ToDos(name: self.name.text!, desc: self.desc.text, date: self.date.date, initDate: Date(), record: Record?.recordID)
-        )
-        LandingVCmove()
-        
         
     }
     /*
