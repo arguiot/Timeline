@@ -23,6 +23,9 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
     @IBOutlet weak var loading: UIActivityIndicatorView!
     
     var LandingVC: Landing?
+    
+    var todos = [ToDos]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,11 +54,13 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func LandingVCmove() {
+        LandingVC?.todos = todos
         self.hero.replaceViewController(with: LandingVC!)
     }
     @objc func handlePan(_ sender: UIScreenEdgePanGestureRecognizer) {
         switch sender.state {
         case .began:
+            LandingVC?.todos = todos
             self.hero.replaceViewController(with: LandingVC!)
         case .changed:
             let translation = sender.translation(in: nil)

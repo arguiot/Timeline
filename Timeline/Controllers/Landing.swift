@@ -16,6 +16,9 @@ class Landing: UIViewController {
     @IBOutlet weak var TableView: UITableView!
     
     let NewVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewVC") as! New
+    
+    var timer = Timer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -31,7 +34,11 @@ class Landing: UIViewController {
         
         TableView.contentInset = UIEdgeInsets(top: 50,left: 0,bottom: 0,right: 0)
         
-        loadData()
+        if todos.isEmpty {
+            loadData()
+        }
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.loadData), userInfo: nil, repeats: true) // Refresh every 5 seconds
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,26 +46,33 @@ class Landing: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func NewVCmove() {
+        NewVC.todos = todos
+        
         self.hero.replaceViewController(with: NewVC)
     }
     
     var todos = [ToDos]()
     
     let db = CKContainer.default().privateCloudDatabase
-    func loadData() {
+    
+    @objc func loadData() {
         let query = CKQuery(recordType: "ToDos", predicate: NSPredicate(value: true))
         // Last created first
         query.sortDescriptors = [NSSortDescriptor(key: "initDate", ascending: false)]
         
         db.perform(query, inZoneWith: nil) { (records, error) in
-            print("Log: \(error)")
+            if error != nil {
+                print("Log: \(String(describing: error))")
+            }
+            
             guard let records = records else { return }
+            self.todos = [] // Emptying todos
             for record in records {
                 self.todos.append(ToDos(name: record.value(forKey: "name") as! String,
                                         desc: record.value(forKey: "desc") as! String,
                                         date: record.value(forKey: "date") as! Date,
                                         initDate: record.value(forKey: "initDate") as! Date,
-                                        record: record.recordID as? CKRecordID))
+                                        record: record.recordID))
             }
             DispatchQueue.main.async {
                 self.TableView.reloadData()

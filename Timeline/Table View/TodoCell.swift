@@ -17,8 +17,13 @@ class TodoCell: UITableViewCell {
     @IBOutlet weak var button: TBButton!
     @IBOutlet weak var progressView: Progress!
     
+    
+    weak var timer = Timer()
+    
+    var Todo: ToDos?
     func setValues(todo: ToDos, row: Int) {
         button.row = row
+        Todo = todo
         
         title.text = todo.name
         
@@ -33,11 +38,7 @@ class TodoCell: UITableViewCell {
         formatter.dateFormat = "E, dd MMM HH:mm"
         date.text = formatter.string(from: todo.date)
         
-        let d1d2 = Float(todo.date.timeIntervalSince(todo.initDate))
-        let nowd2 = Float(Date().timeIntervalSince(todo.initDate))
-        let p = 1 - nowd2 / d1d2  // due to gradient (we're reversing the bar)
-
-        progressView.progress.progress = p
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.updateBar), userInfo: nil, repeats: true)
         
         style()
     }
@@ -50,5 +51,13 @@ class TodoCell: UITableViewCell {
         button.layer.shadowOffset = CGSize(width: 0, height: 4)
         button.layer.shadowRadius = 10
         button.layer.shadowPath = UIBezierPath(rect: button.bounds).cgPath
+    }
+    
+    @objc private func updateBar() {
+        let d1d2 = Float((Todo?.date.timeIntervalSince((Todo?.initDate)!))!)
+        let nowd2 = Float(Date().timeIntervalSince((Todo?.initDate)!))
+        let p = 1 - nowd2 / d1d2  // due to gradient (we're reversing the bar)
+        
+        progressView.progress.setProgress(p, animated: true)
     }
 }

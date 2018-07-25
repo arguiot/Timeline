@@ -31,8 +31,6 @@ class Select: UIViewController {
         LandingVC?.hero.isEnabled = true
         LandingVC?.hero.modalAnimationType = .zoomOut
         
-        
-        print(cell?.name)
     }
 
     override func didReceiveMemoryWarning() {
