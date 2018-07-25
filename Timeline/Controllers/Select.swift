@@ -48,6 +48,9 @@ class Select: UIViewController {
     @IBAction func deleteToDo() {
         let i = LandingVC?.todos.index(of: cell!) ?? 0
         db.delete(withRecordID: (cell?.record)!) { (id, error) in
+            if error != nil {
+                Alert().alert("Error", "\(error.debugDescription)", VC: self)
+            }
             print("Deleted row \(id): \(error)")
         }
         

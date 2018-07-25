@@ -135,10 +135,11 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
         db.save(todo) { (record, error) in
             if error != nil {
                 print("error: \(error)")
+                Alert().alert("Error", "\(error.debugDescription)", VC: self)
                 self.notification.notificationOccurred(.error)
             }
             DispatchQueue.main.async {
-                self.LandingVC?.todos.append(ToDos(name: self.name.text!,
+                self.LandingVC?.todos.append(ToDos(name: self.name.text ?? "",
                                                    desc: self.desc.text,
                                                    date: self.date.date,
                                                    initDate: Date(),

@@ -68,6 +68,7 @@ class Landing: UIViewController {
         db.perform(query, inZoneWith: nil) { (records, error) in
             if error != nil {
                 print("Log: \(String(describing: error))")
+                Alert().alert("Error", "\(error.debugDescription)", VC: self)
             }
             
             guard let records = records else { return }
