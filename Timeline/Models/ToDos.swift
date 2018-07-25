@@ -7,16 +7,19 @@
 //
 
 import Foundation
+import CloudKit
 
 class ToDos {
     var name: String
     var desc: String
     var date: Date
     var initDate: Date
-    init(name: String, desc: String, date: Date, initDate: Date) {
+    var record: CKRecordID?
+    init(name: String, desc: String, date: Date, initDate: Date, record: CKRecordID?) {
         self.name = name
         self.desc = desc
         self.date = date
         self.initDate = initDate
+        self.record = record
     }
 }

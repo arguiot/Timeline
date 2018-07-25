@@ -57,7 +57,8 @@ class Landing: UIViewController {
                 self.todos.append(ToDos(name: record.value(forKey: "name") as! String,
                                         desc: record.value(forKey: "desc") as! String,
                                         date: record.value(forKey: "date") as! Date,
-                                        initDate: record.value(forKey: "initDate") as! Date))
+                                        initDate: record.value(forKey: "initDate") as! Date,
+                                        record: record.recordID as? CKRecordID))
             }
             DispatchQueue.main.async {
                 self.TableView.reloadData()
@@ -67,6 +68,7 @@ class Landing: UIViewController {
     let SelectVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SelectVC") as! Select
     @IBAction func SelectVCmode(_ sender: TBButton) {
         SelectVC.img = self.view.asImage()
+        SelectVC.cell = todos[sender.row!]
         
         self.hero.replaceViewController(with: SelectVC)
     }

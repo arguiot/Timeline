@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import CloudKit
 
 class Select: UIViewController {
 
     @IBOutlet weak var bluredBG: UIImageView!
     
+    var cell: ToDos?
     
     var img = UIImage()
     
@@ -27,6 +29,8 @@ class Select: UIViewController {
         LandingVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LandingVC") as? Landing
         LandingVC?.hero.isEnabled = true
         LandingVC?.hero.modalAnimationType = .zoomOut
+        
+        print(cell?.name)
     }
 
     override func didReceiveMemoryWarning() {
