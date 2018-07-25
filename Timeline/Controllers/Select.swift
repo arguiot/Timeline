@@ -37,7 +37,10 @@ class Select: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    let impact = UIImpactFeedbackGenerator()
     @IBAction func LandingVCmove(_ sender: Any) {
+        impact.impactOccurred()
+        
         self.hero.replaceViewController(with: LandingVC!)
     }
     

@@ -15,6 +15,8 @@ class Landing: UIViewController {
     @IBOutlet weak var TopBar: TopBar!
     @IBOutlet weak var TableView: UITableView!
     
+    @IBOutlet weak var nTodos: UILabel!
+    
     let NewVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewVC") as! New
     
     var timer = Timer()
@@ -38,6 +40,9 @@ class Landing: UIViewController {
             loadData()
         }
         timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.loadData), userInfo: nil, repeats: true) // Refresh every 5 seconds
+        
+        
+        nTodos.text = "You have \(todos.count) todos"
         
     }
 
@@ -76,14 +81,20 @@ class Landing: UIViewController {
             }
             DispatchQueue.main.async {
                 self.TableView.reloadData()
+                
+                self.nTodos.text = "You have \(self.todos.count) todos"
             }
         }
     }
     let SelectVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SelectVC") as! Select
+    
+    let impact = UIImpactFeedbackGenerator()
     @IBAction func SelectVCmode(_ sender: TBButton) {
         SelectVC.img = self.view.asImage()
         SelectVC.cell = todos[sender.row!]
         SelectVC.todos = todos
+        
+        impact.impactOccurred()
         
         self.hero.replaceViewController(with: SelectVC)
     }

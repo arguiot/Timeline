@@ -36,6 +36,9 @@
                             <real key="value" value="37.5"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="deleteToDo" destination="-2" eventType="touchUpInside" id="Mzo-xF-1GE"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjt-8o-zPn">
                     <rect key="frame" x="0.0" y="110" width="75" height="75"/>

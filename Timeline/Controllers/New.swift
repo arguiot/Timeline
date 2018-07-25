@@ -118,6 +118,9 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
         desc.layer.masksToBounds = true
     }
     
+    let notification = UINotificationFeedbackGenerator()
+    
+    
     let db = CKContainer.default().privateCloudDatabase
     @IBAction func saveToDo(_ sender: Any?) {
         self.view.isUserInteractionEnabled = false
@@ -130,12 +133,17 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
         todo.setValue(Date(), forKey: "initDate")
         
         db.save(todo) { (record, error) in
+            if error != nil {
+                print("error: \(error)")
+                self.notification.notificationOccurred(.error)
+            }
             DispatchQueue.main.async {
                 self.LandingVC?.todos.append(ToDos(name: self.name.text!,
                                                    desc: self.desc.text,
                                                    date: self.date.date,
                                                    initDate: Date(),
                                                    record: record?.recordID))
+                self.notification.notificationOccurred(.success)
                 self.LandingVCmove()
             }
         }
