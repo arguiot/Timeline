@@ -37,6 +37,7 @@
 		687CAE7D21066ADD00BAF716 /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687CAE7C21066ADD00BAF716 /* Gradients.swift */; };
 		689272B32107C13100ACC4B5 /* VC2Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689272B22107C13100ACC4B5 /* VC2Image.swift */; };
 		689272B52107C17500ACC4B5 /* Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689272B42107C17500ACC4B5 /* Select.swift */; };
+		68F2DD4921089E5400B8132D /* TBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F2DD4821089E5400B8132D /* TBButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -86,6 +87,7 @@
 		687CAE7C21066ADD00BAF716 /* Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
 		689272B22107C13100ACC4B5 /* VC2Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC2Image.swift; sourceTree = "<group>"; };
 		689272B42107C17500ACC4B5 /* Select.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Select.swift; sourceTree = "<group>"; };
+		68F2DD4821089E5400B8132D /* TBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				685812212103C6C0007B6DF3 /* TodoCell.swift */,
+				68F2DD4821089E5400B8132D /* TBButton.swift */,
 			);
 			path = "Table View";
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				689272B52107C17500ACC4B5 /* Select.swift in Sources */,
 				685812222103C6C0007B6DF3 /* TodoCell.swift in Sources */,
 				6868380F210522F200AD930B /* Button.swift in Sources */,
+				68F2DD4921089E5400B8132D /* TBButton.swift in Sources */,
 				6858121221039B08007B6DF3 /* TopBar.swift in Sources */,
 				687CAE7B210668A800BAF716 /* Progress.swift in Sources */,
 				6858121D2103BBC7007B6DF3 /* Blur.swift in Sources */,

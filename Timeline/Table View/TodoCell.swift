@@ -14,10 +14,12 @@ class TodoCell: UITableViewCell {
     @IBOutlet weak var desc: UILabel!
     @IBOutlet weak var date: UILabel!
     
-    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var button: TBButton!
     @IBOutlet weak var progressView: Progress!
     
-    func setValues(todo: ToDos) {
+    func setValues(todo: ToDos, row: Int) {
+        button.row = row
+        
         title.text = todo.name
         
         var end = "\n\n\n\n"

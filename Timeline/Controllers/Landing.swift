@@ -64,14 +64,13 @@ class Landing: UIViewController {
             }
         }
     }
-    
     let SelectVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SelectVC") as! Select
-    @IBAction func SelectVCmove() {
+    @IBAction func SelectVCmode(_ sender: TBButton) {
         SelectVC.img = self.view.asImage()
-        
         
         self.hero.replaceViewController(with: SelectVC)
     }
+    
 
 }
 
@@ -85,7 +84,7 @@ extension Landing: UITableViewDataSource, UITableViewDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell") as! TodoCell
         
-        cell.setValues(todo: todo)
+        cell.setValues(todo: todo, row: indexPath.row)
         return cell
     }
     
