@@ -261,11 +261,21 @@
                                     <action selector="LandingVCmove:" destination="76U-sb-g8E" eventType="touchUpInside" id="hUR-ZU-8an"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rl7-Cq-Tgq" customClass="Options" customModule="Timeline" customModuleProvider="target">
+                                <rect key="frame" x="87" y="240.5" width="200" height="185"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="LQC-DQ-kW7"/>
+                                    <constraint firstAttribute="height" constant="185" id="OWj-AF-1gV"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="rl7-Cq-Tgq" firstAttribute="centerY" secondItem="xGx-NZ-duD" secondAttribute="centerY" id="37p-A5-nfP"/>
                             <constraint firstItem="6NF-aC-ok9" firstAttribute="top" secondItem="xGx-NZ-duD" secondAttribute="top" id="9Hi-AB-dkU"/>
                             <constraint firstAttribute="trailing" secondItem="Ea5-Iv-H35" secondAttribute="trailing" id="MrT-kj-SgC"/>
+                            <constraint firstItem="rl7-Cq-Tgq" firstAttribute="centerX" secondItem="xGx-NZ-duD" secondAttribute="centerX" id="OKh-wH-M2s"/>
                             <constraint firstItem="Ea5-Iv-H35" firstAttribute="top" secondItem="xGx-NZ-duD" secondAttribute="top" id="PzS-Zw-M5E"/>
                             <constraint firstItem="Ea5-Iv-H35" firstAttribute="leading" secondItem="xGx-NZ-duD" secondAttribute="leading" id="evt-TE-0Qp"/>
                             <constraint firstItem="6NF-aC-ok9" firstAttribute="leading" secondItem="sZo-ob-8RV" secondAttribute="leading" id="k5v-nU-S2h"/>

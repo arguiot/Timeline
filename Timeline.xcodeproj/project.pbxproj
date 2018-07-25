@@ -38,6 +38,8 @@
 		689272B32107C13100ACC4B5 /* VC2Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689272B22107C13100ACC4B5 /* VC2Image.swift */; };
 		689272B52107C17500ACC4B5 /* Select.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689272B42107C17500ACC4B5 /* Select.swift */; };
 		68F2DD4921089E5400B8132D /* TBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F2DD4821089E5400B8132D /* TBButton.swift */; };
+		68F2DD4B2108AEB600B8132D /* Options.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68F2DD4A2108AEB600B8132D /* Options.xib */; };
+		68F2DD4D2108AEC700B8132D /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F2DD4C2108AEC700B8132D /* Options.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -88,6 +90,8 @@
 		689272B22107C13100ACC4B5 /* VC2Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC2Image.swift; sourceTree = "<group>"; };
 		689272B42107C17500ACC4B5 /* Select.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Select.swift; sourceTree = "<group>"; };
 		68F2DD4821089E5400B8132D /* TBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBButton.swift; sourceTree = "<group>"; };
+		68F2DD4A2108AEB600B8132D /* Options.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Options.xib; sourceTree = "<group>"; };
+		68F2DD4C2108AEC700B8132D /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,7 @@
 				685812062103990E007B6DF3 /* TopBar.xib */,
 				6868380C2105219F00AD930B /* button.xib */,
 				687CAE782106672900BAF716 /* Progress.xib */,
+				68F2DD4A2108AEB600B8132D /* Options.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 				6858121121039B08007B6DF3 /* TopBar.swift */,
 				6868380E210522F200AD930B /* Button.swift */,
 				687CAE7A210668A700BAF716 /* Progress.swift */,
+				68F2DD4C2108AEC700B8132D /* Options.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,6 +314,7 @@
 				6858121621039D10007B6DF3 /* Inter-UI-BoldItalic.ttf in Resources */,
 				6858121921039D10007B6DF3 /* Inter-UI-MediumItalic.ttf in Resources */,
 				687CAE792106672A00BAF716 /* Progress.xib in Resources */,
+				68F2DD4B2108AEB600B8132D /* Options.xib in Resources */,
 				685811F221027443007B6DF3 /* Main.storyboard in Resources */,
 				6858121521039D10007B6DF3 /* Inter-UI-Bold.ttf in Resources */,
 				685812072103990E007B6DF3 /* TopBar.xib in Resources */,
@@ -334,6 +341,7 @@
 				6858121D2103BBC7007B6DF3 /* Blur.swift in Sources */,
 				6858121F2103C2F9007B6DF3 /* BorderRadius.swift in Sources */,
 				685811ED21027443007B6DF3 /* AppDelegate.swift in Sources */,
+				68F2DD4D2108AEC700B8132D /* Options.swift in Sources */,
 				689272B32107C13100ACC4B5 /* VC2Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
