@@ -41,6 +41,14 @@ class Select: UIViewController {
         self.hero.replaceViewController(with: LandingVC!)
     }
     
+    let db = CKContainer.default().privateCloudDatabase
+    @IBAction func deleteToDo() {
+        
+        db.delete(withRecordID: (cell?.record)!) { (id, error) in
+            print("Deleted row \(id): \(error)")
+        }
+        LandingVCmove(self)
+    }
     /*
     // MARK: - Navigation
 

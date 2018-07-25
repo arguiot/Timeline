@@ -117,13 +117,16 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
         todo.setValue(date.date, forKey: "date")
         todo.setValue(Date(), forKey: "initDate")
         
+        var Record: CKRecord?
         db.save(todo) { (record, error) in
-            print(record, error)
+            Record = record
         }
         LandingVC?.todos.append(
-            ToDos(name: name.text!, desc: desc.text, date: date.date, initDate: Date(), record: nil)
+            ToDos(name: self.name.text!, desc: self.desc.text, date: self.date.date, initDate: Date(), record: Record?.recordID)
         )
         LandingVCmove()
+        
+        
     }
     /*
     // MARK: - Navigation
