@@ -138,7 +138,7 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
                 Alert().alert("Error", "\(error.debugDescription)", VC: self)
                 self.notification.notificationOccurred(.error)
             }
-            DispatchQueue.main.async {
+            DispatchQueue.main.sync {
                 self.LandingVC?.todos.append(ToDos(name: self.name.text ?? "",
                                                    desc: self.desc.text,
                                                    date: self.date.date,

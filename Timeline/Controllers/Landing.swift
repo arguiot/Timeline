@@ -39,6 +39,8 @@ class Landing: UIViewController {
         if todos.isEmpty {
             loadData()
         }
+        TableView.reloadData()
+
         timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.loadData), userInfo: nil, repeats: true) // Refresh every 5 seconds
         
         

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class TodoCell: UITableViewCell {
     
@@ -53,11 +54,25 @@ class TodoCell: UITableViewCell {
         button.layer.shadowPath = UIBezierPath(rect: button.bounds).cgPath
     }
     
+    let db = CKContainer.default().privateCloudDatabase
+    var deleted = false
     @objc private func updateBar() {
         let d1d2 = Float((Todo?.date.timeIntervalSince((Todo?.initDate)!))!)
         let nowd2 = Float(Date().timeIntervalSince((Todo?.initDate)!))
         let p = 1 - nowd2 / d1d2  // due to gradient (we're reversing the bar)
         
+        if p < 0 && deleted == false {
+            db.delete(withRecordID: (Todo?.record)!) { (id, error) in
+                if error != nil {
+                    Alert().alert("Error", "\(error.debugDescription)", VC: self.parentViewController!)
+                } else {
+                    self.deleted = true
+                }
+                print("Deleted row \(id?.recordName): \(error)")
+                
+                (self.parentViewController as! Landing).loadData()
+            }
+        }
         progressView.progress.setProgress(p, animated: true)
     }
 }
