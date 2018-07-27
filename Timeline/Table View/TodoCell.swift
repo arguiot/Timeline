@@ -63,14 +63,18 @@ class TodoCell: UITableViewCell {
         
         if p < 0 && deleted == false {
             db.delete(withRecordID: (Todo?.record)!) { (id, error) in
+                
                 if error != nil {
-                    Alert().alert("Error", "\(error.debugDescription)", VC: self.parentViewController!)
+                    DispatchQueue.main.async {
+                        Alert().alert("Error", "\(error.debugDescription)", VC: self.parentViewController!)
+                    }
                 } else {
                     self.deleted = true
                 }
                 print("Deleted row \(id?.recordName): \(error)")
-                
-                (self.parentViewController as! Landing).loadData()
+                DispatchQueue.main.async {
+                    (self.parentViewController as! Landing).loadData()
+                }
             }
         }
         progressView.progress.setProgress(p, animated: true)
