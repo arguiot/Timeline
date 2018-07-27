@@ -35,11 +35,12 @@ class Landing: UIViewController {
         SelectVC.hero.modalAnimationType = .zoom
         
         TableView.contentInset = UIEdgeInsets(top: 50,left: 0,bottom: 0,right: 0)
+        TableView.reloadData()
         
         if todos.isEmpty {
             loadData()
         }
-        TableView.reloadData()
+        
 
         timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.loadData), userInfo: nil, repeats: true) // Refresh every 5 seconds
         
