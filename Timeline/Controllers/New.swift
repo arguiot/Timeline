@@ -37,6 +37,7 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
         desc.delegate = self
         desc.textColor = .lightGray
         
+        date.minimumDate = Date()
         
         LandingVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LandingVC") as? Landing
         
