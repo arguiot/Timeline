@@ -61,7 +61,7 @@ class TodoCell: UITableViewCell {
         let nowd2 = Float(Date().timeIntervalSince((Todo?.initDate)!))
         let p = 1 - nowd2 / d1d2  // due to gradient (we're reversing the bar)
         
-        if p < 0 && deleted == false {
+        if (p < 0 || p > 1) && deleted == false {
             db.delete(withRecordID: (Todo?.record)!) { (id, error) in
                 
                 if error != nil {
