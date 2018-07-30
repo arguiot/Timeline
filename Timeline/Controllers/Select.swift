@@ -8,6 +8,7 @@
 
 import UIKit
 import CloudKit
+import Hero
 
 class Select: UIViewController {
 
@@ -19,6 +20,7 @@ class Select: UIViewController {
     var img = UIImage()
     
     var LandingVC: Landing?
+    var NewVC: New?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +32,10 @@ class Select: UIViewController {
         LandingVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LandingVC") as? Landing
         LandingVC?.hero.isEnabled = true
         LandingVC?.hero.modalAnimationType = .zoomOut
+        
+        NewVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewVC") as? New
+        NewVC?.hero.isEnabled = true
+        NewVC?.hero.modalAnimationType = .pageIn(direction: .left)
         
     }
 
@@ -58,6 +64,15 @@ class Select: UIViewController {
         
         LandingVC?.todos = todos
         LandingVCmove(self)
+    }
+    
+    
+    @IBAction func editToDo() {
+        NewVC?.todo = cell
+        NewVC?.todos = todos
+        NewVC?.editMode = true
+        
+        self.hero.replaceViewController(with: NewVC!)
     }
     /*
     // MARK: - Navigation

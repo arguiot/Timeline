@@ -26,6 +26,9 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
     
     var todos = [ToDos]()
     
+    var editMode = false
+    var todo: ToDos?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,12 +51,24 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
         edgeGestureRecognizer.edges = .left
         edgeGestureRecognizer.delegate = self
         self.view.addGestureRecognizer(edgeGestureRecognizer)
+        
+        if editMode {
+            fillData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func fillData() {
+        name.text = todo?.name
+        desc.text = todo?.desc
+        desc.textColor = .black // so the text doesn't disappear on editing.
+        date.date = (todo?.date)!
+    }
+    
     @IBAction func LandingVCmove() {
         LandingVC?.todos = todos
         self.hero.replaceViewController(with: LandingVC!)
@@ -124,9 +139,58 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
     
     let db = CKContainer.default().privateCloudDatabase
     @IBAction func saveToDo(_ sender: Any?) {
+        
         self.view.isUserInteractionEnabled = false
         loading.isHidden = false
         
+        if editMode {
+            editTD()
+        } else {
+            newTD()
+        }
+        
+        
+    }
+    func editTD() {
+        db.fetch(withRecordID: (self.todo?.record)!) { (record, error) in
+            
+            if error != nil {
+                print("error: \(error)")
+                Alert().alert("Error", "\(error.debugDescription)", VC: self)
+                self.notification.notificationOccurred(.error)
+            }
+            DispatchQueue.main.sync {
+                record?.setValue(self.name.text, forKey: "name")
+                record?.setValue(self.desc.text, forKey: "desc")
+                record?.setValue(self.date.date, forKey: "date")
+            }
+            
+            print(record)
+            
+            self.db.save(record!) { (record, error) in
+                if error != nil {
+                    print("error: \(error)")
+                    Alert().alert("Error", "\(error.debugDescription)", VC: self)
+                    self.notification.notificationOccurred(.error)
+                }
+                DispatchQueue.main.async {
+                    let t = ToDos(name: self.name.text ?? "",
+                                  desc: self.desc.text,
+                                  date: self.date.date,
+                                  initDate: (self.todo?.initDate)!,
+                                  record: record?.recordID)
+                    let i = self.todos.index(of: self.todo!) ?? 0
+                    print(i)
+                    self.todos[i] = t
+                    
+                    self.notification.notificationOccurred(.success)
+                    self.LandingVCmove()
+                }
+            }
+        }
+        
+    }
+    func newTD() {
         let todo = CKRecord(recordType: "ToDos")
         todo.setValue(name.text, forKey: "name")
         todo.setValue(desc.text, forKey: "desc")
@@ -151,7 +215,6 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
                 self.LandingVCmove()
             }
         }
-        
     }
     /*
     // MARK: - Navigation
