@@ -34,5 +34,6 @@ class NotificationService: UNNotificationServiceExtension {
             OneSignal.serviceExtensionTimeWillExpireRequest(self.receivedRequest, with: self.bestAttemptContent)
             contentHandler(bestAttemptContent)
         }
+    }
 }
 
