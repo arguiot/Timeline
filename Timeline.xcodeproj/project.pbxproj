@@ -44,6 +44,7 @@
 		6893789B2110FE2D003EACAD /* OneSignal.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 689378992110FE2D003EACAD /* OneSignal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6893789C2110FE52003EACAD /* OneSignal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689378992110FE2D003EACAD /* OneSignal.framework */; };
 		6893789F21110FA9003EACAD /* textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6893789E21110FA9003EACAD /* textField.swift */; };
+		68F04EB52111D59900EB27B9 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F04EB42111D59900EB27B9 /* Notifier.swift */; };
 		68F2DD4921089E5400B8132D /* TBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F2DD4821089E5400B8132D /* TBButton.swift */; };
 		68F2DD4B2108AEB600B8132D /* Options.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68F2DD4A2108AEB600B8132D /* Options.xib */; };
 		68F2DD4D2108AEC700B8132D /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F2DD4C2108AEC700B8132D /* Options.swift */; };
@@ -125,6 +126,7 @@
 		689272B42107C17500ACC4B5 /* Select.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Select.swift; sourceTree = "<group>"; };
 		689378992110FE2D003EACAD /* OneSignal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OneSignal.framework; path = Carthage/Build/iOS/OneSignal.framework; sourceTree = "<group>"; };
 		6893789E21110FA9003EACAD /* textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textField.swift; sourceTree = "<group>"; };
+		68F04EB42111D59900EB27B9 /* Notifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
 		68F2DD4821089E5400B8132D /* TBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBButton.swift; sourceTree = "<group>"; };
 		68F2DD4A2108AEB600B8132D /* Options.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Options.xib; sourceTree = "<group>"; };
 		68F2DD4C2108AEC700B8132D /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 			children = (
 				687CAE722105D8B400BAF716 /* ToDos.swift */,
 				687CAE7C21066ADD00BAF716 /* Gradients.swift */,
+				68F04EB42111D59900EB27B9 /* Notifier.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68F04EB52111D59900EB27B9 /* Notifier.swift in Sources */,
 				687CAE7D21066ADD00BAF716 /* Gradients.swift in Sources */,
 				680793252103CE5A00066F69 /* New.swift in Sources */,
 				685811EF21027443007B6DF3 /* Landing.swift in Sources */,
