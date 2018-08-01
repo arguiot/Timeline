@@ -34,22 +34,14 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYs-dh-Rh4">
-                    <rect key="frame" x="325" y="47" width="20" height="22"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="20" id="Eyf-no-fAA"/>
-                        <constraint firstAttribute="height" constant="22" id="GE9-Df-eLG"/>
-                    </constraints>
+                    <rect key="frame" x="296" y="16" width="79" height="84"/>
                     <state key="normal" image="Add"/>
                     <connections>
                         <action selector="NewVCmove" destination="-2" eventType="touchUpInside" id="mP5-p6-bV5"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgc-uv-gDJ">
-                    <rect key="frame" x="30" y="46" width="14" height="24"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="14" id="g8a-hU-fss"/>
-                        <constraint firstAttribute="height" constant="24" id="qX5-ed-Nma"/>
-                    </constraints>
+                    <rect key="frame" x="0.0" y="16" width="79" height="84"/>
                     <state key="normal" image="Back"/>
                     <connections>
                         <action selector="LandingVCmove" destination="-2" eventType="touchUpInside" id="AqD-Ie-x5e"/>
@@ -58,12 +50,16 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Qgc-uv-gDJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="Dlt-8x-KkF"/>
                 <constraint firstItem="wjq-Vo-tWP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FW9-f4-Ame"/>
-                <constraint firstItem="bYs-dh-Rh4" firstAttribute="centerY" secondItem="wjq-Vo-tWP" secondAttribute="centerY" id="KCo-M0-AQq"/>
+                <constraint firstItem="Qgc-uv-gDJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="I96-tf-leL"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="wjq-Vo-tWP" secondAttribute="bottom" constant="20" id="OnM-8c-V7n"/>
-                <constraint firstItem="Qgc-uv-gDJ" firstAttribute="centerY" secondItem="wjq-Vo-tWP" secondAttribute="centerY" id="Tag-E5-hPy"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bYs-dh-Rh4" secondAttribute="trailing" constant="30" id="v5h-gg-9La"/>
+                <constraint firstItem="bYs-dh-Rh4" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="UQH-Y8-ODw"/>
+                <constraint firstItem="Qgc-uv-gDJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="XAA-RW-I2p"/>
+                <constraint firstItem="wjq-Vo-tWP" firstAttribute="leading" secondItem="Qgc-uv-gDJ" secondAttribute="trailing" constant="35" id="ZgD-gG-0er"/>
+                <constraint firstItem="bYs-dh-Rh4" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="ifo-RW-ivo"/>
+                <constraint firstItem="Qgc-uv-gDJ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="qIi-Jf-F1u"/>
+                <constraint firstItem="bYs-dh-Rh4" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="rUg-3g-elX"/>
+                <constraint firstItem="bYs-dh-Rh4" firstAttribute="leading" secondItem="wjq-Vo-tWP" secondAttribute="trailing" constant="35" id="sSq-FE-fvk"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
