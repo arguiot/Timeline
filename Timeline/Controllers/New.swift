@@ -190,6 +190,8 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
         }
         
     }
+    
+    let ntf = Notifier()
     func newTD() {
         let todo = CKRecord(recordType: "ToDos")
         todo.setValue(name.text, forKey: "name")
@@ -209,7 +211,9 @@ class New: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
                               date: self.date.date,
                               initDate: Date(),
                               record: record?.recordID)
-                
+                self.ntf.createNotification(todo: t, callback: { (data) in
+                    print(data)
+                })
                 self.todos.insert(t, at: 0)
                 self.notification.notificationOccurred(.success)
                 self.LandingVCmove()
