@@ -50,13 +50,13 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Qgc-uv-gDJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="6Jw-Ad-txx"/>
                 <constraint firstItem="wjq-Vo-tWP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="FW9-f4-Ame"/>
                 <constraint firstItem="Qgc-uv-gDJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="I96-tf-leL"/>
+                <constraint firstItem="bYs-dh-Rh4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="L3a-hY-NNL"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="wjq-Vo-tWP" secondAttribute="bottom" constant="20" id="OnM-8c-V7n"/>
                 <constraint firstItem="bYs-dh-Rh4" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="UQH-Y8-ODw"/>
-                <constraint firstItem="Qgc-uv-gDJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="XAA-RW-I2p"/>
                 <constraint firstItem="wjq-Vo-tWP" firstAttribute="leading" secondItem="Qgc-uv-gDJ" secondAttribute="trailing" constant="35" id="ZgD-gG-0er"/>
-                <constraint firstItem="bYs-dh-Rh4" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="ifo-RW-ivo"/>
                 <constraint firstItem="Qgc-uv-gDJ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="qIi-Jf-F1u"/>
                 <constraint firstItem="bYs-dh-Rh4" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="rUg-3g-elX"/>
                 <constraint firstItem="bYs-dh-Rh4" firstAttribute="leading" secondItem="wjq-Vo-tWP" secondAttribute="trailing" constant="35" id="sSq-FE-fvk"/>
