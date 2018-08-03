@@ -46,7 +46,7 @@ class TodoCell: UITableViewCell {
     private func style() {
         button.layer.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
-        button.layer.cornerRadius = 5
+        button.layer.cornerRadius = 10
         button.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.2513479313)
         button.layer.shadowOpacity = 1
         button.layer.shadowOffset = CGSize(width: 0, height: 4)
