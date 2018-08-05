@@ -38,6 +38,7 @@ class Landing: UIViewController {
         TableView.reloadData()
         
         if todos.isEmpty {
+            nTodos.text = "Loading..."
             loadData()
         }
         
@@ -45,7 +46,7 @@ class Landing: UIViewController {
         timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.loadData), userInfo: nil, repeats: true) // Refresh every 5 seconds
         
         
-        nTodos.text = "You have \(todos.count) todos"
+        nTodos.text = "You have \(todos.count) \(todos.count <= 1 ? "todo" : "todos")"
         
     }
 
@@ -86,7 +87,7 @@ class Landing: UIViewController {
             DispatchQueue.main.async {
                 self.TableView.reloadData()
                 
-                self.nTodos.text = "You have \(self.todos.count) todos"
+                self.nTodos.text = "You have \(self.todos.count) \(self.todos.count <= 1 ? "todo" : "todos")"
             }
         }
     }
