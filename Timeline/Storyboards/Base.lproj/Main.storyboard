@@ -53,7 +53,6 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="184" id="num-fI-ZCW"/>
-                                                        <constraint firstAttribute="width" constant="277" id="wBX-wM-3xe"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -109,6 +108,7 @@
                                                 <constraint firstItem="bbm-xh-S53" firstAttribute="centerX" secondItem="uf2-fw-Swt" secondAttribute="centerX" id="2Hf-sE-hUO"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="mXQ-mr-TuF" secondAttribute="bottom" constant="15" id="6E8-RK-RIS"/>
                                                 <constraint firstItem="Bp2-lG-RMA" firstAttribute="leading" secondItem="uf2-fw-Swt" secondAttribute="leadingMargin" constant="52" id="6mg-Fm-NGo"/>
+                                                <constraint firstItem="bbm-xh-S53" firstAttribute="leading" secondItem="uf2-fw-Swt" secondAttribute="leading" constant="49" id="CZn-SW-Qak"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="JBA-Zw-0fo" secondAttribute="trailing" constant="53" id="CbK-1g-iPc"/>
                                                 <constraint firstItem="Bp2-lG-RMA" firstAttribute="top" secondItem="uf2-fw-Swt" secondAttribute="topMargin" constant="10" id="G3O-i9-1ju"/>
                                                 <constraint firstItem="mXQ-mr-TuF" firstAttribute="centerX" secondItem="uf2-fw-Swt" secondAttribute="centerX" id="G5x-1i-qch"/>
@@ -116,6 +116,7 @@
                                                 <constraint firstItem="JBA-Zw-0fo" firstAttribute="top" secondItem="OBG-rZ-ijE" secondAttribute="bottom" constant="8" id="RvA-Kp-MYe"/>
                                                 <constraint firstItem="OBG-rZ-ijE" firstAttribute="top" secondItem="uf2-fw-Swt" secondAttribute="topMargin" constant="25" id="en6-jm-Txx"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Bp2-lG-RMA" secondAttribute="trailing" constant="53" id="h39-de-CFo"/>
+                                                <constraint firstAttribute="trailing" secondItem="bbm-xh-S53" secondAttribute="trailing" constant="49" id="kfe-np-SZA"/>
                                                 <constraint firstItem="OBG-rZ-ijE" firstAttribute="leading" secondItem="uf2-fw-Swt" secondAttribute="leadingMargin" constant="52" id="oqw-QX-CFl"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="OBG-rZ-ijE" secondAttribute="trailing" constant="53" id="xZM-mh-8jg"/>
                                             </constraints>
