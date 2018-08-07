@@ -17,7 +17,6 @@
 		682EDB72211A03A500304C82 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682EDB71211A03A500304C82 /* InterfaceController.swift */; };
 		682EDB74211A03A500304C82 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682EDB73211A03A500304C82 /* ExtensionDelegate.swift */; };
 		682EDB76211A03A500304C82 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682EDB75211A03A500304C82 /* NotificationController.swift */; };
-		682EDB78211A03A500304C82 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682EDB77211A03A500304C82 /* ComplicationController.swift */; };
 		682EDB7A211A03A500304C82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682EDB79211A03A500304C82 /* Assets.xcassets */; };
 		682EDB7F211A03A500304C82 /* watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 682EDB60211A03A300304C82 /* watchOS.app */; };
 		682EDB8B211A079100304C82 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682EDB8A211A079100304C82 /* TodoCell.swift */; };
@@ -148,11 +147,10 @@
 		682EDB71211A03A500304C82 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		682EDB73211A03A500304C82 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		682EDB75211A03A500304C82 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		682EDB77211A03A500304C82 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		682EDB79211A03A500304C82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		682EDB7B211A03A500304C82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		682EDB7C211A03A500304C82 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		682EDB8A211A079100304C82 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
+		682EDB90211A1B1A00304C82 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		685811E921027443007B6DF3 /* Timeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		685811EC21027443007B6DF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		685811EE21027443007B6DF3 /* Landing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landing.swift; sourceTree = "<group>"; };
@@ -246,9 +244,8 @@
 			children = (
 				682EDB8C211A086200304C82 /* Extension */,
 				682EDB75211A03A500304C82 /* NotificationController.swift */,
-				682EDB77211A03A500304C82 /* ComplicationController.swift */,
 				682EDB79211A03A500304C82 /* Assets.xcassets */,
-				682EDB7B211A03A500304C82 /* Info.plist */,
+				682EDB90211A1B1A00304C82 /* Info.plist */,
 				682EDB7C211A03A500304C82 /* PushNotificationPayload.apns */,
 			);
 			path = "watchOS Extension";
@@ -673,7 +670,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				682EDB76211A03A500304C82 /* NotificationController.swift in Sources */,
-				682EDB78211A03A500304C82 /* ComplicationController.swift in Sources */,
 				682EDB74211A03A500304C82 /* ExtensionDelegate.swift in Sources */,
 				682EDB8B211A079100304C82 /* TodoCell.swift in Sources */,
 				682EDB72211A03A500304C82 /* InterfaceController.swift in Sources */,
@@ -844,7 +840,7 @@
 		682EDB82211A03A500304C82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73CCF549YB;
 				INFOPLIST_FILE = "watchOS Extension/Info.plist";
@@ -866,7 +862,7 @@
 		682EDB83211A03A500304C82 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73CCF549YB;
 				INFOPLIST_FILE = "watchOS Extension/Info.plist";
