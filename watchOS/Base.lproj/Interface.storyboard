@@ -64,6 +64,20 @@
                             <fontDescription key="font" name="InterUI-Bold" family="Inter UI" pointSize="17"/>
                         </label>
                     </items>
+                    <menu key="menu" id="hbW-wG-6My">
+                        <items>
+                            <menuItem title="Done" image="Done" id="Pdf-XF-bWc">
+                                <connections>
+                                    <action selector="done" destination="4Dz-0e-Kay" id="Ky7-vt-opj"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Delete" image="Delete" id="353-qa-k5S">
+                                <connections>
+                                    <action selector="delete" destination="4Dz-0e-Kay" id="gYU-tv-IQv"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="date" destination="CM1-gI-VGd" id="2sU-cd-yvO"/>
                         <outlet property="desc" destination="bHv-W5-tme" id="j0R-sP-I1c"/>

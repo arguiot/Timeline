@@ -8,17 +8,23 @@
 
 import Foundation
 import WatchKit
+import CloudKit
 
 class TodoVC: WKInterfaceController {
     @IBOutlet var name: WKInterfaceLabel!
     @IBOutlet var desc: WKInterfaceLabel!
     @IBOutlet var date: WKInterfaceLabel!
+    @IBOutlet var progress: WKInterfaceLabel!
     
+    var td: ToDos?
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
         let t = context as! ToDos
+        
+        td = t // for later use
+        
         name.setText(t.name)
         desc.setText(t.desc)
         
@@ -26,6 +32,29 @@ class TodoVC: WKInterfaceController {
         // initially set the format based on your datepicker date / server String
         formatter.dateFormat = "M/d/yy, hh:mm"
         date.setText(formatter.string(from: t.date))
+        
+        // compute progress
+        let d1d2 = Float(
+            t.date.timeIntervalSince(t.initDate)
+        )
+        let nowd2 = Float(
+            Date().timeIntervalSince(t.initDate)
+        )
+        let p = Int((nowd2 / d1d2) * 100)
+        progress.setText("\(p)%")
+    }
+    @IBAction func done() {
+        deleteTodo()
+    }
+    @IBAction func delete() {
+        deleteTodo()
+    }
+    
+    let db = CKContainer.default().privateCloudDatabase
+    func deleteTodo() {
+        db.delete(withRecordID: (td?.record)!) { (recrd, error) in
+            self.pop()
+        }
     }
     
     override func willActivate() {

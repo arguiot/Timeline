@@ -12,7 +12,6 @@
 		68258E2421105E9C00FCE924 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68258E2321105E9C00FCE924 /* NotificationService.swift */; };
 		68258E2821105E9C00FCE924 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 68258E2121105E9C00FCE924 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		682EDB64211A03A300304C82 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 682EDB62211A03A300304C82 /* Interface.storyboard */; };
-		682EDB66211A03A400304C82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682EDB65211A03A400304C82 /* Assets.xcassets */; };
 		682EDB6D211A03A500304C82 /* watchOS Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 682EDB6C211A03A500304C82 /* watchOS Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		682EDB72211A03A500304C82 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682EDB71211A03A500304C82 /* InterfaceController.swift */; };
 		682EDB74211A03A500304C82 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682EDB73211A03A500304C82 /* ExtensionDelegate.swift */; };
@@ -53,6 +52,7 @@
 		687BF556211B136E0048C2F5 /* Inter-UI-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6858120C21039A48007B6DF3 /* Inter-UI-MediumItalic.ttf */; };
 		687BF557211B136E0048C2F5 /* Inter-UI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6858120921039A47007B6DF3 /* Inter-UI-Regular.ttf */; };
 		687BF559211B16600048C2F5 /* TodoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687BF558211B16600048C2F5 /* TodoVC.swift */; };
+		687BF55B211B1ECE0048C2F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 685811F321027446007B6DF3 /* Assets.xcassets */; };
 		687CAE732105D8B400BAF716 /* ToDos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687CAE722105D8B400BAF716 /* ToDos.swift */; };
 		687CAE772105DE0200BAF716 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687CAE762105DE0200BAF716 /* CloudKit.framework */; };
 		687CAE792106672A00BAF716 /* Progress.xib in Resources */ = {isa = PBXBuildFile; fileRef = 687CAE782106672900BAF716 /* Progress.xib */; };
@@ -151,7 +151,6 @@
 		68258E2521105E9C00FCE924 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		682EDB60211A03A300304C82 /* watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watchOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		682EDB63211A03A300304C82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		682EDB65211A03A400304C82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		682EDB67211A03A400304C82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		682EDB6C211A03A500304C82 /* watchOS Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "watchOS Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		682EDB71211A03A500304C82 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
@@ -247,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				682EDB62211A03A300304C82 /* Interface.storyboard */,
-				682EDB65211A03A400304C82 /* Assets.xcassets */,
 				682EDB67211A03A400304C82 /* Info.plist */,
 			);
 			path = watchOS;
@@ -577,10 +575,10 @@
 			files = (
 				687BF550211B136E0048C2F5 /* Inter-UI-Black.ttf in Resources */,
 				687BF551211B136E0048C2F5 /* Inter-UI-BlackItalic.ttf in Resources */,
+				687BF55B211B1ECE0048C2F5 /* Assets.xcassets in Resources */,
 				687BF556211B136E0048C2F5 /* Inter-UI-MediumItalic.ttf in Resources */,
 				687BF555211B136E0048C2F5 /* Inter-UI-Medium.ttf in Resources */,
 				687BF552211B136E0048C2F5 /* Inter-UI-Bold.ttf in Resources */,
-				682EDB66211A03A400304C82 /* Assets.xcassets in Resources */,
 				687BF557211B136E0048C2F5 /* Inter-UI-Regular.ttf in Resources */,
 				687BF554211B136E0048C2F5 /* Inter-UI-Italic.ttf in Resources */,
 				687BF553211B136E0048C2F5 /* Inter-UI-BoldItalic.ttf in Resources */,
@@ -837,7 +835,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73CCF549YB;
 				IBSC_MODULE = watchOS_Extension;
@@ -856,7 +853,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 73CCF549YB;
 				IBSC_MODULE = watchOS_Extension;
