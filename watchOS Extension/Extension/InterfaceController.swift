@@ -31,7 +31,9 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-    
+    override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
+        return todos[rowIndex]
+    }
     var todos = [ToDos]()
     
     let db = CKContainer.default().privateCloudDatabase
@@ -82,7 +84,7 @@ class InterfaceController: WKInterfaceController {
                     )
                     let p = Int((nowd2 / d1d2) * 100)
                     
-                    row.progress.setText(String(p))
+                    row.progress.setText("\(String(p))%")
                     
                 }
             }

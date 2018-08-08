@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-UI-Bold.ttf">
+            <string>InterUI-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
@@ -27,6 +32,7 @@
                                     <connections>
                                         <outlet property="name" destination="eJ9-eY-C3b" id="KjA-t7-8Ta"/>
                                         <outlet property="progress" destination="FZ1-0V-Sd6" id="E9E-vf-wdw"/>
+                                        <segue destination="4Dz-0e-Kay" kind="push" id="NP7-9b-8L0"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -38,6 +44,30 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--TodoVC-->
+        <scene sceneID="RCN-aY-AyE">
+            <objects>
+                <controller id="4Dz-0e-Kay" customClass="TodoVC" customModule="watchOS_Extension">
+                    <items>
+                        <label alignment="right" text="Date" id="CM1-gI-VGd">
+                            <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                        </label>
+                        <label alignment="left" text="Title" id="CKS-ei-HFA">
+                            <fontDescription key="font" name="InterUI-Bold" family="Inter UI" pointSize="20"/>
+                        </label>
+                        <label width="136" alignment="left" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam " textAlignment="left" numberOfLines="10" id="bHv-W5-tme">
+                            <fontDescription key="font" name="InterUI-Bold" family="Inter UI" pointSize="14"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="date" destination="CM1-gI-VGd" id="2sU-cd-yvO"/>
+                        <outlet property="desc" destination="bHv-W5-tme" id="j0R-sP-I1c"/>
+                        <outlet property="name" destination="CKS-ei-HFA" id="jKg-mn-pRS"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="461" y="346"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

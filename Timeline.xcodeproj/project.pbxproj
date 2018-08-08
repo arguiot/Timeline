@@ -44,6 +44,15 @@
 		685812222103C6C0007B6DF3 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685812212103C6C0007B6DF3 /* TodoCell.swift */; };
 		6868380D2105219F00AD930B /* button.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6868380C2105219F00AD930B /* button.xib */; };
 		6868380F210522F200AD930B /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6868380E210522F200AD930B /* Button.swift */; };
+		687BF550211B136E0048C2F5 /* Inter-UI-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6858120D21039A48007B6DF3 /* Inter-UI-Black.ttf */; };
+		687BF551211B136E0048C2F5 /* Inter-UI-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6858120F21039A48007B6DF3 /* Inter-UI-BlackItalic.ttf */; };
+		687BF552211B136E0048C2F5 /* Inter-UI-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6858121021039A49007B6DF3 /* Inter-UI-Bold.ttf */; };
+		687BF553211B136E0048C2F5 /* Inter-UI-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6858120A21039A47007B6DF3 /* Inter-UI-BoldItalic.ttf */; };
+		687BF554211B136E0048C2F5 /* Inter-UI-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6858120B21039A47007B6DF3 /* Inter-UI-Italic.ttf */; };
+		687BF555211B136E0048C2F5 /* Inter-UI-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6858120E21039A48007B6DF3 /* Inter-UI-Medium.ttf */; };
+		687BF556211B136E0048C2F5 /* Inter-UI-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6858120C21039A48007B6DF3 /* Inter-UI-MediumItalic.ttf */; };
+		687BF557211B136E0048C2F5 /* Inter-UI-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6858120921039A47007B6DF3 /* Inter-UI-Regular.ttf */; };
+		687BF559211B16600048C2F5 /* TodoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687BF558211B16600048C2F5 /* TodoVC.swift */; };
 		687CAE732105D8B400BAF716 /* ToDos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687CAE722105D8B400BAF716 /* ToDos.swift */; };
 		687CAE772105DE0200BAF716 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687CAE762105DE0200BAF716 /* CloudKit.framework */; };
 		687CAE792106672A00BAF716 /* Progress.xib in Resources */ = {isa = PBXBuildFile; fileRef = 687CAE782106672900BAF716 /* Progress.xib */; };
@@ -177,6 +186,7 @@
 		685812212103C6C0007B6DF3 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
 		6868380C2105219F00AD930B /* button.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = button.xib; sourceTree = "<group>"; };
 		6868380E210522F200AD930B /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		687BF558211B16600048C2F5 /* TodoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoVC.swift; sourceTree = "<group>"; };
 		687CAE722105D8B400BAF716 /* ToDos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDos.swift; sourceTree = "<group>"; };
 		687CAE742105DD2200BAF716 /* Timeline.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Timeline.entitlements; sourceTree = "<group>"; };
 		687CAE762105DE0200BAF716 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -262,6 +272,7 @@
 				682EDB71211A03A500304C82 /* InterfaceController.swift */,
 				682EDB73211A03A500304C82 /* ExtensionDelegate.swift */,
 				682EDB8A211A079100304C82 /* TodoCell.swift */,
+				687BF558211B16600048C2F5 /* TodoVC.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -564,7 +575,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				687BF550211B136E0048C2F5 /* Inter-UI-Black.ttf in Resources */,
+				687BF551211B136E0048C2F5 /* Inter-UI-BlackItalic.ttf in Resources */,
+				687BF556211B136E0048C2F5 /* Inter-UI-MediumItalic.ttf in Resources */,
+				687BF555211B136E0048C2F5 /* Inter-UI-Medium.ttf in Resources */,
+				687BF552211B136E0048C2F5 /* Inter-UI-Bold.ttf in Resources */,
 				682EDB66211A03A400304C82 /* Assets.xcassets in Resources */,
+				687BF557211B136E0048C2F5 /* Inter-UI-Regular.ttf in Resources */,
+				687BF554211B136E0048C2F5 /* Inter-UI-Italic.ttf in Resources */,
+				687BF553211B136E0048C2F5 /* Inter-UI-BoldItalic.ttf in Resources */,
 				682EDB64211A03A300304C82 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -687,6 +706,7 @@
 				682EDB74211A03A500304C82 /* ExtensionDelegate.swift in Sources */,
 				682EDB8B211A079100304C82 /* TodoCell.swift in Sources */,
 				682EDB72211A03A500304C82 /* InterfaceController.swift in Sources */,
+				687BF559211B16600048C2F5 /* TodoVC.swift in Sources */,
 				682EDB8D211A08E800304C82 /* ToDos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
