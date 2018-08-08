@@ -32,7 +32,7 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
-        return todos[rowIndex]
+        return self.todos[rowIndex]
     }
     var todos = [ToDos]()
     
@@ -65,6 +65,8 @@ class InterfaceController: WKInterfaceController {
     }
     func loadTodos() {
         fetchItems { (data) in
+            self.todos = data
+            
             self.table.setNumberOfRows(data.count, withRowType: "Todo")
             
             let rowCount = self.table.numberOfRows

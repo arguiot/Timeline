@@ -59,11 +59,16 @@
                         <label width="136" alignment="left" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam " textAlignment="left" numberOfLines="10" id="bHv-W5-tme">
                             <fontDescription key="font" name="InterUI-Bold" family="Inter UI" pointSize="14"/>
                         </label>
+                        <label alignment="center" text="80%" textAlignment="center" id="SKI-RU-nSq">
+                            <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                            <fontDescription key="font" name="InterUI-Bold" family="Inter UI" pointSize="17"/>
+                        </label>
                     </items>
                     <connections>
                         <outlet property="date" destination="CM1-gI-VGd" id="2sU-cd-yvO"/>
                         <outlet property="desc" destination="bHv-W5-tme" id="j0R-sP-I1c"/>
                         <outlet property="name" destination="CKS-ei-HFA" id="jKg-mn-pRS"/>
+                        <outlet property="progress" destination="SKI-RU-nSq" id="jcv-1k-Hnl"/>
                     </connections>
                 </controller>
             </objects>
