@@ -50,7 +50,7 @@ class TodoVC: WKInterfaceController {
         deleteTodo()
     }
     
-    let db = CKContainer.default().privateCloudDatabase
+    let db = CKContainer(identifier: "iCloud.com.ArthurG.Timeline").privateCloudDatabase
     func deleteTodo() {
         db.delete(withRecordID: (td?.record)!) { (recrd, error) in
             if error != nil {

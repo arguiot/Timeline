@@ -37,7 +37,7 @@ class InterfaceController: WKInterfaceController {
     }
     var todos = [ToDos]()
     
-    let db = CKContainer.default().privateCloudDatabase
+    let db = CKContainer(identifier: "iCloud.com.ArthurG.Timeline").privateCloudDatabase
     
     func fetchItems(completionHandler: @escaping ([ToDos]) -> Void) {
         let query = CKQuery(recordType: "ToDos", predicate: NSPredicate(value: true))
