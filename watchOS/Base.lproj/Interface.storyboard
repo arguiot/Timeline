@@ -12,6 +12,9 @@
         <array key="Inter-UI-Bold.ttf">
             <string>InterUI-Bold</string>
         </array>
+        <array key="Inter-UI-Medium.ttf">
+            <string>InterUI-Medium</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Interface Controller-->
@@ -37,9 +40,14 @@
                                 </tableRow>
                             </items>
                         </table>
+                        <label alignment="center" text="You have 0 todos" textAlignment="center" numberOfLines="2" id="SSJ-DY-Etr">
+                            <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                            <fontDescription key="font" name="InterUI-Medium" family="Inter UI" pointSize="14"/>
+                        </label>
                     </items>
                     <connections>
                         <outlet property="table" destination="BN2-7Z-e2D" id="eTl-HV-ICm"/>
+                        <outlet property="todosCount" destination="SSJ-DY-Etr" id="s30-Ps-Kib"/>
                     </connections>
                 </controller>
             </objects>

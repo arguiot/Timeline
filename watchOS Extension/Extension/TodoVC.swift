@@ -53,6 +53,9 @@ class TodoVC: WKInterfaceController {
     let db = CKContainer.default().privateCloudDatabase
     func deleteTodo() {
         db.delete(withRecordID: (td?.record)!) { (recrd, error) in
+            if error != nil {
+                self.presentAlert(withTitle: "Error", message: "Log: \(String(describing: error))", preferredStyle: .alert, actions: [WKAlertAction(title: "Cancel", style: .cancel) {}])
+            }
             self.pop()
         }
     }

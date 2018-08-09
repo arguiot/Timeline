@@ -13,6 +13,7 @@ import CloudKit
 class InterfaceController: WKInterfaceController {
 
     @IBOutlet var table: WKInterfaceTable!
+    @IBOutlet var todosCount: WKInterfaceLabel!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -45,6 +46,7 @@ class InterfaceController: WKInterfaceController {
         
         db.perform(query, inZoneWith: nil) { (records, error) in
             if error != nil {
+                self.presentAlert(withTitle: "Error", message: "Log: \(String(describing: error))", preferredStyle: .alert, actions: [WKAlertAction(title: "Cancel", style: .cancel) {}])
                 print("Log: \(String(describing: error))")
             }
 
@@ -70,6 +72,8 @@ class InterfaceController: WKInterfaceController {
             self.table.setNumberOfRows(data.count, withRowType: "Todo")
             
             let rowCount = self.table.numberOfRows
+            self.todosCount.setText("You have \(rowCount) \(rowCount <= 1 ? "todo" : "todos")")
+            
             if rowCount > 0 {
                 for i in 0...rowCount - 1{
                     let c = self.table.rowController(at: i)
