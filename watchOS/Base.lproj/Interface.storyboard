@@ -40,7 +40,7 @@
                                 </tableRow>
                             </items>
                         </table>
-                        <label alignment="center" text="You have 0 todos" textAlignment="center" numberOfLines="2" id="SSJ-DY-Etr">
+                        <label alignment="center" text="Loading..." textAlignment="center" numberOfLines="2" id="SSJ-DY-Etr">
                             <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                             <fontDescription key="font" name="InterUI-Medium" family="Inter UI" pointSize="14"/>
                         </label>
