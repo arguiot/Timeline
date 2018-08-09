@@ -18,7 +18,10 @@ class Notifier {
         let finalDate = todo.initDate.addingTimeInterval(diff)
         
         OneSignal.postNotification([
-            "contents": ["en": "Your todo titled \"\(todo.name)\" is almost finished. Make sure everything is done in time."],
+            "contents": [
+                "en": "Your todo titled \"\(todo.name)\" is almost finished. Make sure everything is done in time.",
+                "fr": "Le rappel \"\(todo.name)\" est presque finit, veuillez à ce que tout soit finit en temps et en heure."
+            ],
             "include_player_ids": [id],
             "send_after": finalDate.description
             ], onSuccess: { (data) in
