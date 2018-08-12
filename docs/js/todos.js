@@ -35,9 +35,13 @@ class MainView extends P.ViewController {
 		}
 	}
 	willShow() {
-		this.mountGroup(
+		this.sign = this.mountGroup(
 			this.view.querySelector("#sign"),
 			SignGroup
+		)
+		this.tdg = this.mountGroup(
+			this.view.querySelector(".todos"),
+			TodosGroup
 		)
 	}
 	willDisappear() {
@@ -54,9 +58,10 @@ class SignGroup extends P.Group {
 				this.gotoUnauthenticatedState()
 			}
 		})
+		P.workspace["db"] = P.workspace.container.privateCloudDatabase
 	}
 	gotoAuthenticatedState(userIdentity) {
-		const name = userIdentity.nameComponents;
+		P.workspace.user = userIdentity
 		console.log("Signed in")
 		P.workspace.container
 			.whenUserSignsOut()
@@ -73,6 +78,40 @@ class SignGroup extends P.Group {
 			.whenUserSignsIn()
 			.then(this.gotoAuthenticatedState.bind(this))
 			.catch(this.gotoUnauthenticatedState.bind(this));
+	}
+}
+
+class TodosGroup extends P.Group {
+	init() {
+		console.log("Fetching...")
+		this.query().then(data => {
+			console.log(data)
+		})
+	}
+	query() {
+		return new Promise((resolve, reject) => {
+			let query = {
+				recordType: "ToDos",
+				sortBy: [{
+					fieldName: "initDate",
+					ascending: false
+				}]
+			}
+			P.workspace.db.performQuery(query).then(data => {
+				if (data.hasErrors) {
+
+					// Handle them in your app.
+					reject(data.errors[0])
+
+				} else {
+					var records = data.records;
+					resolve(records);
+				}
+			})
+		});
+	}
+	render() {
+		
 	}
 }
 P.autoMount(MainView)
