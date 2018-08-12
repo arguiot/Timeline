@@ -1,3 +1,5 @@
+---
+---
 window.addEventListener("scroll", e => {
 	let logo = document.querySelector(".logo")
 	if (window.scrollY > 10) {
@@ -15,4 +17,7 @@ window.addEventListener("scroll", e => {
 		logo.style.height = "100px"
 		document.querySelector("nav").style.opacity = "0"
 	}
+})
+document.querySelector(".logo").addEventListener("click", e => {
+	window.location = "{{site.download}}"
 })
