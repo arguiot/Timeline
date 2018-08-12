@@ -4,7 +4,6 @@ body {
 	padding: 0;
 	margin: 0;
 	overflow-x: hidden;
-	height: 100vh;
 }
 
 h1 {
@@ -56,6 +55,8 @@ a {
 	align-items: center;
 	flex-direction: row;
 	flex-wrap: wrap;
+	padding-left: 50px;
+	padding-right: 50px;
 	.todo {
 		width: 500px;
 		height: 300px;
@@ -63,8 +64,31 @@ a {
 		border-radius: 10px;
 		.date {
 			position: relative;
-			top: 10px;
+			top: 20px;
+			margin-right: 20px;
 			text-align: right;
+			color: #909090;
+		}
+		h1 {
+			margin-left: 20px;
+			margin-top: -10px;
+		}
+		p {
+			font-weight: bold;
+			margin-top: -48px;
+			padding: 24px;
+		}
+		.progress {
+			width: calc(100% - 40px);
+			margin: 0 auto;
+			height: 10px;
+			background: #eee;
+			.bar {
+				width: 30%;
+				height: 10px;
+				background-color: blue;
+				z-index: 10;
+			}
 		}
 	}
 }

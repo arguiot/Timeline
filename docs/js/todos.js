@@ -39,7 +39,7 @@ class MainView extends P.ViewController {
 			this.view.querySelector("#sign"),
 			SignGroup
 		)
-		this.tdg = this.mountGroup(
+		this.tdg = this.mountGroups(
 			this.view.querySelector(".todos"),
 			TodosGroup
 		)
@@ -110,7 +110,7 @@ class TodosGroup extends P.Group {
 			})
 		});
 	}
-	render() {
+	render(todos) {
 		
 	}
 }
