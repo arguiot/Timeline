@@ -2,3 +2,5 @@ markdown: kramdown
 highlighter: rouge
 
 permalink: pretty
+
+download: ""
