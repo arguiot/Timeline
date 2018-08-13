@@ -104,7 +104,7 @@ class TodosGroup extends P.Group {
 					reject(data.errors[0])
 
 				} else {
-					var records = data.records;
+					const records = data.records;
 					resolve(records);
 				}
 			})
