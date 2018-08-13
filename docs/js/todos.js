@@ -39,7 +39,7 @@ class MainView extends P.ViewController {
 			this.view.querySelector("#sign"),
 			SignGroup
 		)
-		this.tdg = this.mountGroups(
+		this.tdg = this.mountGroup(
 			this.view.querySelector(".todos"),
 			TodosGroup
 		)
@@ -85,7 +85,7 @@ class TodosGroup extends P.Group {
 	init() {
 		console.log("Fetching...")
 		this.query().then(data => {
-			console.log(data)
+			this.render(data)
 		})
 	}
 	query() {
@@ -111,7 +111,9 @@ class TodosGroup extends P.Group {
 		});
 	}
 	render(todos) {
-		
+		for (let i = 0; i < todos.length; i++) {
+			const fields = todos[i].fields
+		}
 	}
 }
 P.autoMount(MainView)
