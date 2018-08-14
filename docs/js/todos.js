@@ -130,6 +130,13 @@ class TodosGroup extends P.Group {
 			</div>
 			`
 			this.group.insertAdjacentHTML("beforeend", model);
+			const todosList = this.group.querySelectorAll(".todo");
+			const last = todosList[todosList.length - 1];
+			setInterval(() => {
+				const nowd1 = Math.abs(new Date().getTime() - initDate.getTime())
+				const progress = (nowd1 / d1d2) * 100
+				last.querySelector(".bar").style.width = `${progress}%`
+			}, 500)
 		}
 	}
 

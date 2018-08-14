@@ -88,9 +88,23 @@ a {
 			.bar {
 				width: 30%;
 				height: 10px;
-				background-color: blue;
 				z-index: 10;
 			}
+		}
+		&:nth-of-type(1n) .progress .bar {
+			background: linear-gradient(to left, #ec2F4B, #009FFF);
+			background-size: calc(500px - 40px);
+			background-position: center;
+		}
+		&:nth-of-type(2n) .progress .bar {
+			background: linear-gradient(to left, #f5af19, #f12711);
+			background-size: calc(500px - 40px);
+			background-position: center;
+		}
+		&:nth-of-type(3n) .progress .bar {
+			background: linear-gradient(to left, #52c234, #061700);
+			background-size: calc(500px - 40px);
+			background-position: center;
 		}
 	}
 }
