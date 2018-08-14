@@ -52,6 +52,8 @@ a {
 	}
 	.option {
 		width: 250px;
+		height: 100px;
+		cursor: pointer;
 	}
 }
 .todos {
@@ -113,4 +115,14 @@ a {
 			background-position: center;
 		}
 	}
+}
+.new {
+	margin-top: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+	padding-left: 50px;
+	padding-right: 50px;
 }

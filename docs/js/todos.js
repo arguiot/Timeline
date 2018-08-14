@@ -36,16 +36,21 @@ class MainView extends P.ViewController {
 	}
 	willShow() {
 		P.workspace.sign = P.mountExternalGroup(
-			this.view.querySelector("#sign"),
+			document.body.querySelector("#sign"),
 			SignGroup
 		)
 		this.tdg = this.mountGroup(
 			this.view.querySelector(".todos"),
 			TodosGroup
 		)
-	}
-	willDisappear() {
+		document.querySelector(".option").addEventListener("click", e => {
+			// optimizing speed by reducing amount of memory needed
+			const el = document.querySelector(".option")
+			const newEl = el.cloneNode(true)
+			el.parentNode.replaceChild(newEl, el);
 
+			P.performTransition("new")
+		})
 	}
 }
 
@@ -111,6 +116,7 @@ class TodosGroup extends P.Group {
 		});
 	}
 	render(todos) {
+		this.group.innerHTML = "";
 		for (let i = 0; i < todos.length; i++) {
 			const fields = todos[i].fields
 
@@ -175,7 +181,7 @@ class TodosGroup extends P.Group {
 			return format;
 		}
 
-		function pad (n, width, z) {
+		function pad(n, width, z) {
 			z = z || '0';
 			n = n + '';
 			return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
@@ -183,6 +189,31 @@ class TodosGroup extends P.Group {
 		return formatDate(date, format)
 	}
 }
-P.autoMount(MainView)
+
+class NewView extends P.ViewController {
+	willShow() {
+		document.querySelector(".option").addEventListener("click", e => {
+			// optimizing speed by reducing amount of memory needed
+			const el = document.querySelector(".option")
+			const newEl = el.cloneNode(true)
+			el.parentNode.replaceChild(newEl, el);
+
+			P.performTransition("main")
+		})
+
+		flatpickr(".new .date", {
+			enableTime: true,
+			dateFormat: "Y-m-d H:i",
+		})
+	}
+	willDisappear() {
+		const node = document.querySelectorAll(".flatpickr-calendar")
+		node.forEach(element => {
+			element.parentNode.removeChild(element);
+		});
+	}
+}
+
+P.autoMount(MainView, NewView)
 
 P.set("main")
