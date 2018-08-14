@@ -49,7 +49,9 @@ class MainView extends P.ViewController {
 			const newEl = el.cloneNode(true)
 			el.parentNode.replaceChild(newEl, el);
 
-			P.performTransition("new")
+			P.performTransition("new", {
+				animation: "newVC"
+			})
 		})
 	}
 }
@@ -198,7 +200,9 @@ class NewView extends P.ViewController {
 			const newEl = el.cloneNode(true)
 			el.parentNode.replaceChild(newEl, el);
 
-			P.performTransition("main")
+			P.performTransition("main", {
+				animation: "newVC"
+			})
 		})
 
 		flatpickr(".new .date", {

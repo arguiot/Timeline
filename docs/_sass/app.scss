@@ -57,7 +57,10 @@ a {
 	}
 }
 .todos {
-	margin-top: 150px;
+	position: absolute;
+	width: calc(100% - 100px);
+	background-color: white;
+	top: 150px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -117,7 +120,10 @@ a {
 	}
 }
 .new {
-	margin-top: 150px;
+	position: absolute;
+	top: 150px;
+	width: calc(100% - 100px);
+	background-color: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -125,4 +131,13 @@ a {
 	flex-wrap: wrap;
 	padding-left: 50px;
 	padding-right: 50px;
+}
+
+@keyframes newVC {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(100%);
+	}
 }
