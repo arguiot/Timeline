@@ -13,12 +13,11 @@ description: Your todos
 	</div>
 </div>
 <div class="new" protype="new">
-	<h2>Title</h2>
-	<input type="text" class="name" placeholder="Type here...">
-	<hr>
-	<h2>Description</h2>
-	<textarea name="desc" rows="4" cols="80"></textarea>
-	<hr>
-	<h2>Date</h2>
-	<input type="text" class="date">
+	<div class="form">
+		<input type="text" class="name" placeholder="Title" maxlength="15">
+
+		<textarea name="desc" rows="4" cols="80" maxlength="130" placeholder="Description"></textarea>
+		
+		<input type="text" class="date" placeholder="Date">
+	</div>
 </div>

@@ -16,7 +16,7 @@ h1 {
 h2 {
 	margin-top: -24px;
 	font-size: 32px;
-	font-weight: 400;
+	// font-weight: 400;
 	line-height: 53px;
 	letter-spacing: -0.0275em;
 	// text-align: center;
@@ -47,15 +47,18 @@ a {
 	box-shadow: 0 5px 30px rgba(0, 0, 0, .25);
 	z-index: 10;
 	background: white;
+
 	.button {
 		width: 250px;
 	}
+
 	.option {
 		width: 250px;
 		height: 100px;
 		cursor: pointer;
 	}
 }
+
 .todos {
 	position: absolute;
 	width: calc(100% - 100px);
@@ -68,12 +71,14 @@ a {
 	flex-wrap: wrap;
 	padding-left: 50px;
 	padding-right: 50px;
+
 	.todo {
 		width: 500px;
 		height: 300px;
 		box-shadow: 0 4px 10px rgba(0, 0, 0, .25);
 		border-radius: 10px;
 		margin: 20px;
+
 		.date {
 			position: relative;
 			top: 20px;
@@ -81,37 +86,44 @@ a {
 			text-align: right;
 			color: #909090;
 		}
+
 		h1 {
 			margin-left: 20px;
 			margin-top: -10px;
 		}
+
 		p {
 			font-weight: bold;
 			margin-top: -48px;
 			padding: 24px;
 			height: 160px;
 		}
+
 		.progress {
 			width: calc(100% - 40px);
 			margin: 0 auto;
 			height: 10px;
 			background: #eee;
+
 			.bar {
 				width: 30%;
 				height: 10px;
 				z-index: 10;
 			}
 		}
+
 		&:nth-of-type(1n) .progress .bar {
 			background: linear-gradient(to left, #ec2F4B, #009FFF);
 			background-size: calc(500px - 40px);
 			background-position: center;
 		}
+
 		&:nth-of-type(2n) .progress .bar {
 			background: linear-gradient(to left, #f5af19, #f12711);
 			background-size: calc(500px - 40px);
 			background-position: center;
 		}
+
 		&:nth-of-type(3n) .progress .bar {
 			background: linear-gradient(to left, #52c234, #061700);
 			background-size: calc(500px - 40px);
@@ -119,24 +131,49 @@ a {
 		}
 	}
 }
+
 .new {
 	position: absolute;
 	top: 150px;
-	width: calc(100% - 100px);
 	background-color: white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	flex-wrap: wrap;
-	padding-left: 50px;
-	padding-right: 50px;
-}
+	width: 100%;
 
+	.form {
+		width: calc(100% - 100px);
+		max-width: 980px;
+		margin: 0 auto;
+		padding-left: 50px;
+		padding-right: 50px;
+		* {
+			margin-top: 30px;
+		}
+		input {
+			font-size: 44px;
+			font-weight: 600;
+			line-height: 44px;
+			letter-spacing: -0.002em;
+			border: none;
+			border-bottom: 2px solid #A9A9A9;
+			width: 100%;
+		}
+		textarea {
+			width: 100%;
+			font-weight: bold;
+			border: none;
+			border-bottom: 2px solid #A9A9A9;
+			resize: none;
+			font-size: 18px;
+			color: inherit;
+			line-height: 32px;
+			letter-spacing: 0.002em;
+		}
+	}
+}
 @keyframes newVC {
 	from {
 		transform: translateX(0);
 	}
+
 	to {
 		transform: translateX(100%);
 	}

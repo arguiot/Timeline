@@ -206,8 +206,9 @@ class NewView extends P.ViewController {
 		})
 
 		flatpickr(".new .date", {
+			minDate: "today",
 			enableTime: true,
-			dateFormat: "Y-m-d H:i",
+			dateFormat: "Y-m-d H:i"
 		})
 	}
 	willDisappear() {
