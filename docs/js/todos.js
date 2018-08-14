@@ -35,7 +35,7 @@ class MainView extends P.ViewController {
 		}
 	}
 	willShow() {
-		this.sign = this.mountGroup(
+		P.workspace.sign = P.mountExternalGroup(
 			this.view.querySelector("#sign"),
 			SignGroup
 		)
@@ -115,12 +115,18 @@ class TodosGroup extends P.Group {
 			const fields = todos[i].fields
 
 			const date = new Date(fields.date.value)
+			const initDate = new Date(fields.initDate.value)
+
+			const d1d2 = Math.abs(date.getTime() - initDate.getTime());
+			const nowd1 = Math.abs(new Date().getTime() - initDate.getTime())
+			const progress = (nowd1 / d1d2) * 100
+
 			const model = `
 			<div class="todo">
 				<div class="date">${this.dateFormat(date, "D, dd MMM HH:mm")}</div>
 				<h1>${fields.name.value}</h1>
 				<p>${fields.desc.value}</p>
-				<div class="progress"><div class="bar"></div></div>
+				<div class="progress"><div class="bar" style="width: ${progress}%"></div></div>
 			</div>
 			`
 			this.group.insertAdjacentHTML("beforeend", model);
