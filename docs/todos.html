@@ -10,14 +10,21 @@ description: Your todos
 </div>
 <div class="app" protype="main">
 	<div class="todos">
+		Loading...
 	</div>
 </div>
 <div class="new" protype="new">
 	<div class="form">
 		<input type="text" class="name" placeholder="Title" maxlength="15">
 
-		<textarea name="desc" rows="4" cols="80" maxlength="130" placeholder="Description"></textarea>
-		
+		<textarea class="desc" rows="4" cols="80" maxlength="130" placeholder="Description"></textarea>
+
 		<input type="text" class="date" placeholder="Date">
+		<div class="done">
+			<svg width="34" height="26" viewBox="0 0 34 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<rect width="30" height="20.625" fill="black" fill-opacity="0" transform="translate(2 2)"/>
+				<path d="M2 13.25L11.375 22.625L32 2" stroke="white" stroke-width="5" stroke-linejoin="round"/>
+			</svg>
+		</div>
 	</div>
 </div>

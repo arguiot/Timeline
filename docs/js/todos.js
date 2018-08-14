@@ -35,10 +35,6 @@ class MainView extends P.ViewController {
 		}
 	}
 	willShow() {
-		P.workspace.sign = P.mountExternalGroup(
-			document.body.querySelector("#sign"),
-			SignGroup
-		)
 		this.tdg = this.mountGroup(
 			this.view.querySelector(".todos"),
 			TodosGroup
@@ -208,12 +204,25 @@ class NewView extends P.ViewController {
 		flatpickr(".new .date", {
 			minDate: "today",
 			enableTime: true,
-			dateFormat: "Y-m-d H:i"
+			dateFormat: "Z",
+			altInput: true
 		})
+
+		this.view.querySelector(".done").addEventListener("click", this.submitTodo.bind(this))
+	}
+	submitTodo() {
+		const name = this.view.querySelector(".name").value
+		const desc = this.view.querySelector(".desc").value
+		const date = new Date(this.view.querySelector(".date").value)
+		console.log(name, desc, date)
 	}
 	willDisappear() {
 		const node = document.querySelectorAll(".flatpickr-calendar")
 		node.forEach(element => {
+			element.parentNode.removeChild(element);
+		});
+		const inputs = document.querySelectorAll("input.form-control")
+		inputs.forEach(element => {
 			element.parentNode.removeChild(element);
 		});
 	}
@@ -222,3 +231,9 @@ class NewView extends P.ViewController {
 P.autoMount(MainView, NewView)
 
 P.set("main")
+
+// Sign group
+P.workspace.sign = P.mountExternalGroup(
+	document.body.querySelector("#sign"),
+	SignGroup
+)
