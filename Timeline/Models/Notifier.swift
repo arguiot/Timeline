@@ -29,5 +29,19 @@ class Notifier {
         }) { (error) in
             print("OneSignal: \(error)")
         }
+        
+        // Adding second notification
+        OneSignal.postNotification([
+            "contents": [
+                "en": "Your todo titled \"\(todo.name)\" should be done, and was deleted. Here is what you should have done: \(todo.desc)"
+            ],
+            "include_player_ids": [id],
+            "send_after": todo.date.description
+            ], onSuccess: { (data) in
+                callback(data!)
+        }) { (error) in
+            print("OneSignal: \(error)")
+        }
     }
+    
 }
