@@ -1,2 +1,3 @@
-github "OneSignal/OneSignal-iOS-SDK" "2.8.5"
+github "Alamofire/Alamofire" "4.7.3"
+github "OneSignal/OneSignal-iOS-SDK" "2.8.6"
 github "lkzhao/Hero" "1.3.0"
