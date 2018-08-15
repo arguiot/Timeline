@@ -86,6 +86,7 @@ class SignGroup extends P.Group {
 
 class TodosGroup extends P.Group {
 	init() {
+		this.group.innerHTML = "Loading...";
 		console.log("Fetching...")
 		this.query().then(data => {
 			this.render(data)
