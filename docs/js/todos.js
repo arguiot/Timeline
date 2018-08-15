@@ -51,6 +51,9 @@ class MainView extends P.ViewController {
 			})
 		})
 	}
+	willDisappear() {
+		clearInterval(P.workspace.refresh)
+	}
 }
 
 class SignGroup extends P.Group {
@@ -88,6 +91,14 @@ class SignGroup extends P.Group {
 class TodosGroup extends P.Group {
 	init() {
 		this.group.innerHTML = "Loading...";
+		if (P.workspace.todos) {
+			this.render(P.workspace.todos)
+		} else {
+			this.fetch()
+		}
+		P.workspace.refresh = setInterval(this.fetch.bind(this), 5000)
+	}
+	fetch() {
 		console.log("Fetching...")
 		this.query().then(data => {
 			P.workspace.todos = data
@@ -116,7 +127,7 @@ class TodosGroup extends P.Group {
 			})
 		});
 	}
-	render(todos) {
+	render(todos = []) {
 		this.group.innerHTML = "";
 		for (let i = 0; i < todos.length; i++) {
 			const fields = todos[i].fields
@@ -143,7 +154,7 @@ class TodosGroup extends P.Group {
 				const nowd1 = Math.abs(new Date().getTime() - initDate.getTime())
 				const progress = (nowd1 / d1d2) * 100
 				last.querySelector(".bar").style.width = `${progress}%`
-				if (progress > 100) {
+				if (progress > 100 && last) {
 					const i = [...last.parentElement.children].indexOf(last);
 					clearInterval(P.workspace.interval[i])
 					this.deleteTodo(P.workspace.todos[i])
@@ -256,6 +267,7 @@ class NewView extends P.ViewController {
 				// Insert error handling or throw the error and handle it using catch() later
 				alert(ckError)
 			} else {
+				P.workspace.todos.unshift(response.records[0])
 				P.performTransition("main", {
 					animation: "newVC"
 				})
@@ -273,6 +285,8 @@ class NewView extends P.ViewController {
 		});
 	}
 }
+
+P.workspace.todos = []
 
 P.autoMount(MainView, NewView)
 
