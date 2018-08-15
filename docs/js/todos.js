@@ -214,7 +214,35 @@ class NewView extends P.ViewController {
 		const name = this.view.querySelector(".name").value
 		const desc = this.view.querySelector(".desc").value
 		const date = new Date(this.view.querySelector(".date").value)
-		console.log(name, desc, date)
+
+		const record = {
+			recordType: "ToDos",
+			fields: {
+				name: {
+					value: name
+				},
+				desc: {
+					value: desc
+				},
+				initDate: {
+					value: new Date().getTime()
+				},
+				date: {
+					value: date.getTime()
+				}
+			}
+		}
+		P.workspace.db.saveRecords(record).then(response => {
+			if (response.hasErrors) {
+				const ckError = response.errors[0];
+				// Insert error handling or throw the error and handle it using catch() later
+				alert(ckError)
+			} else {
+				P.performTransition("main", {
+					animation: "newVC"
+				})
+			}
+		})
 	}
 	willDisappear() {
 		const node = document.querySelectorAll(".flatpickr-calendar")
