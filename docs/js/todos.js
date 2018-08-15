@@ -35,6 +35,7 @@ class MainView extends P.ViewController {
 		}
 	}
 	willShow() {
+		P.workspace.interval = []
 		this.tdg = this.mountGroup(
 			this.view.querySelector(".todos"),
 			TodosGroup
@@ -89,6 +90,7 @@ class TodosGroup extends P.Group {
 		this.group.innerHTML = "Loading...";
 		console.log("Fetching...")
 		this.query().then(data => {
+			P.workspace.todos = data
 			this.render(data)
 		})
 	}
@@ -137,14 +139,29 @@ class TodosGroup extends P.Group {
 			this.group.insertAdjacentHTML("beforeend", model);
 			const todosList = this.group.querySelectorAll(".todo");
 			const last = todosList[todosList.length - 1];
-			setInterval(() => {
+			P.workspace.interval.push(setInterval(() => {
 				const nowd1 = Math.abs(new Date().getTime() - initDate.getTime())
 				const progress = (nowd1 / d1d2) * 100
 				last.querySelector(".bar").style.width = `${progress}%`
-			}, 500)
+				if (progress > 100) {
+					const i = [...last.parentElement.children].indexOf(last);
+					clearInterval(P.workspace.interval[i])
+					this.deleteTodo(P.workspace.todos[i])
+				}
+			}, 500))
 		}
 	}
-
+	deleteTodo(record) {
+		const i = P.workspace.todos.indexOf(record)
+		if (i !== -1) P.workspace.todos.splice(i, 1);
+		this.render(P.workspace.todos)
+		P.workspace.db.deleteRecords(record).then(x => {
+			this.query().then(data => {
+				P.workspace.todos = data
+				this.render(data)
+			})
+		})
+	}
 	dateFormat(date, format) {
 		var monthNames = [
 			"January", "February", "March",
