@@ -254,6 +254,7 @@ class TodosGroup extends P.Group {
 
 class NewView extends P.ViewController {
 	willShow() {
+		this.emptyEverything()
 		document.querySelector(".option").addEventListener("click", e => {
 			// optimizing speed by reducing amount of memory needed
 			const el = document.querySelector(".option")
@@ -267,12 +268,19 @@ class NewView extends P.ViewController {
 
 		flatpickr(".new .date", {
 			minDate: "today",
+			minTime: `${new Date().getHours()}:${new Date().getMinutes()}`,
 			enableTime: true,
 			dateFormat: "Z",
-			altInput: true
+			altInput: true,
+			time_24hr: true
 		})
 
 		this.view.querySelector(".done").addEventListener("click", this.submitTodo.bind(this))
+	}
+	emptyEverything() {
+		this.view.querySelector(".name").value = ""
+		this.view.querySelector(".desc").value = ""
+		this.view.querySelector(".date").value = ""
 	}
 	submitTodo() {
 		const name = this.view.querySelector(".name").value
