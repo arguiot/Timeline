@@ -145,11 +145,32 @@ class TodosGroup extends P.Group {
 				<h1>${fields.name.value}</h1>
 				<p>${fields.desc.value}</p>
 				<div class="progress"><div class="bar" style="width: ${progress}%"></div></div>
+				<div class="hud">
+					<div class="done item">
+						<svg width="34" height="26" viewBox="0 0 34 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect width="30" height="20.625" fill="black" fill-opacity="0" transform="translate(2 2)"/>
+							<path d="M2 13.25L11.375 22.625L32 2" stroke="black" stroke-width="5" stroke-linejoin="round"/>
+						</svg>
+					</div>
+					<div class="delete item">
+						<svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M2 32L32 2M2 2L32 32L2 2Z" stroke="black" stroke-width="5"/>
+						</svg>
+					</div>
+					<div class="edit item">
+						<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M3 33L4.03448 25.7586L26.7931 3L33 9.2069L10.2414 31.9655L3 33Z" stroke="black" stroke-width="5" stroke-linejoin="round"/>
+						</svg>
+					</div>
+				</div>
 			</div>
 			`
 			this.group.insertAdjacentHTML("beforeend", model);
 			const todosList = this.group.querySelectorAll(".todo");
 			const last = todosList[todosList.length - 1];
+
+			this.todoClick(todos[i], last)
+
 			P.workspace.interval.push(setInterval(() => {
 				const nowd1 = Math.abs(new Date().getTime() - initDate.getTime())
 				const progress = (nowd1 / d1d2) * 100
@@ -161,6 +182,19 @@ class TodosGroup extends P.Group {
 				}
 			}, 500))
 		}
+	}
+	todoClick(todo, el) {
+		el.addEventListener("click", e => {
+			const hud = el.querySelector(".hud")
+			if (getComputedStyle(hud).getPropertyValue("display") == "none") {
+				clearInterval(P.workspace.refresh)
+				hud.style.display = "block"
+			} else {
+				hud.style.display = "none"
+				P.workspace.refresh = setInterval(this.fetch.bind(this), 5000)
+			}
+
+		})
 	}
 	deleteTodo(record) {
 		const i = P.workspace.todos.indexOf(record)
