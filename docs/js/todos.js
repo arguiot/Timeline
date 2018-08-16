@@ -268,7 +268,8 @@ class NewView extends P.ViewController {
 
 		flatpickr(".new .date", {
 			minDate: "today",
-			minTime: `${new Date().getHours()}:${new Date().getMinutes()}`,
+			defaultHour: new Date().getHours(),
+			defaultMinute: new Date().getMinutes(),
 			enableTime: true,
 			dateFormat: "Z",
 			altInput: true,
