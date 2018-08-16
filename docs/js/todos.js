@@ -188,13 +188,14 @@ class TodosGroup extends P.Group {
 			const hud = el.querySelector(".hud")
 			if (getComputedStyle(hud).getPropertyValue("display") == "none") {
 				clearInterval(P.workspace.refresh)
-				hud.style.display = "block"
+				hud.style.display = "flex"
 			} else {
 				hud.style.display = "none"
 				P.workspace.refresh = setInterval(this.fetch.bind(this), 5000)
 			}
-
 		})
+		el.querySelector(".delete").addEventListener("click", e => { this.deleteTodo(todo) })
+		el.querySelector(".done").addEventListener("click", e => { this.deleteTodo(todo) })
 	}
 	deleteTodo(record) {
 		const i = P.workspace.todos.indexOf(record)
