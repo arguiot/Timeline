@@ -36,6 +36,7 @@ class MainView extends P.ViewController {
 	}
 	willShow() {
 		P.workspace.interval = []
+		document.querySelector(".option").style["background-image"] = "url(\"../img/Add.svg\")";
 		this.tdg = this.mountGroup(
 			this.view.querySelector(".todos"),
 			TodosGroup
@@ -255,6 +256,7 @@ class TodosGroup extends P.Group {
 class NewView extends P.ViewController {
 	willShow() {
 		this.emptyEverything()
+		document.querySelector(".option").style["background-image"] = "url(\"../img/Back.svg\")";
 		document.querySelector(".option").addEventListener("click", e => {
 			// optimizing speed by reducing amount of memory needed
 			const el = document.querySelector(".option")

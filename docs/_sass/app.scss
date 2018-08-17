@@ -57,6 +57,10 @@ a {
 		width: 250px;
 		height: 100px;
 		cursor: pointer;
+		background-image: url("../img/Add.svg");
+		background-repeat: no-repeat;
+		background-position: center;
+		transition: all 500ms ease-in-out;
 	}
 }
 
