@@ -120,7 +120,24 @@ header {
 		background-repeat: no-repeat;
 	}
 }
-
+.go {
+	width: 100%;
+	text-align: center;
+	padding: 50px;
+	box-sizing: border-box;
+	.app {
+		color: rgb(100, 100, 100);
+		margin-top: -24px;
+		font-size: 36px;
+		font-weight: 500;
+		line-height: 53px;
+		letter-spacing: -0.0275em;
+		text-decoration: none;
+		&:hover {
+			color: rgb(150, 150, 150);
+		}
+	}
+}
 article {
 	border-top: 2px solid #eee;
 	box-sizing: border-box;
