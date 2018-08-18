@@ -73,18 +73,20 @@ class SignGroup extends P.Group {
 		console.log("Signed in")
 		P.workspace.container
 			.whenUserSignsOut()
-			.then(this.gotoUnauthenticatedState.bind(this));
+			.then(this.reload);
 	}
-
+	reload() {
+		window.location = ""
+	}
 	gotoUnauthenticatedState(error) {
-
+		document.querySelector(".todos").innerHTML = "Please sign in."
 		if (error && error.ckErrorCode === 'AUTH_PERSIST_ERROR') {
 			alert("Persisting error.")
 		}
 		console.log("Signed out")
-		container
+		P.workspace.container
 			.whenUserSignsIn()
-			.then(this.gotoAuthenticatedState.bind(this))
+			.then(this.reload)
 			.catch(this.gotoUnauthenticatedState.bind(this));
 	}
 }
