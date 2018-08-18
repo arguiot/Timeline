@@ -199,6 +199,7 @@ class TodosGroup extends P.Group {
 		})
 		el.querySelector(".delete").addEventListener("click", e => { this.deleteTodo(todo) })
 		el.querySelector(".done").addEventListener("click", e => { this.deleteTodo(todo) })
+		el.querySelector(".edit").addEventListener("click", e => { this.editTodo(todo) })
 	}
 	deleteTodo(record) {
 		const i = P.workspace.todos.indexOf(record)
@@ -209,6 +210,15 @@ class TodosGroup extends P.Group {
 				P.workspace.todos = data
 				this.render(data)
 			})
+		})
+	}
+	editTodo(record) {
+		P.workspace.edit = {
+			edit: true,
+			record: record
+		}
+		P.performTransition("new", {
+			animation: "newVC"
 		})
 	}
 	dateFormat(date, format) {
@@ -257,7 +267,11 @@ class TodosGroup extends P.Group {
 
 class NewView extends P.ViewController {
 	willShow() {
-		this.emptyEverything()
+		if (P.workspace.edit && P.workspace.edit.edit === true) {
+			this.fill(P.workspace.edit.record)
+		} else {
+			this.emptyEverything()
+		}
 		document.querySelector(".option").style["background-image"] = "url(\"../img/Back.svg\")";
 		document.querySelector(".option").addEventListener("click", e => {
 			// optimizing speed by reducing amount of memory needed
@@ -281,6 +295,11 @@ class NewView extends P.ViewController {
 		})
 
 		this.view.querySelector(".done").addEventListener("click", this.submitTodo.bind(this))
+	}
+	fill(record) {
+		this.view.querySelector(".name").value = record.fields.name.value
+		this.view.querySelector(".desc").value = record.fields.desc.value
+		this.view.querySelector(".date").value = new Date(record.fields.date.value).toString()
 	}
 	emptyEverything() {
 		this.view.querySelector(".name").value = ""
@@ -309,13 +328,26 @@ class NewView extends P.ViewController {
 				}
 			}
 		}
+		if (P.workspace.edit && P.workspace.edit.edit === true) {
+			record.fields.initDate = {
+				value: P.workspace.edit.record.fields.initDate.value
+			}
+			record.recordName = P.workspace.edit.record.recordName
+			record.recordChangeTag = P.workspace.edit.record.recordChangeTag
+		}
 		P.workspace.db.saveRecords(record).then(response => {
 			if (response.hasErrors) {
 				const ckError = response.errors[0];
 				// Insert error handling or throw the error and handle it using catch() later
 				alert(ckError)
 			} else {
-				P.workspace.todos.unshift(response.records[0])
+				if (P.workspace.edit && P.workspace.edit.edit === true) {
+					const i = P.workspace.todos.indexOf(P.workspace.edit.record)
+					if (i !== -1) P.workspace.todos[i] = response.records[0]
+					P.workspace.edit.edit = false
+				} else {
+					P.workspace.todos.unshift(response.records[0])
+				}
 				P.performTransition("main", {
 					animation: "newVC"
 				})
