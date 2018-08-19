@@ -93,7 +93,7 @@ class SignGroup extends P.Group {
 
 class TodosGroup extends P.Group {
 	init() {
-		this.group.innerHTML = "Loading...";
+		this.group.innerHTML = "<div class=\"span\">Loading...</div>";
 		if (P.workspace.todos) {
 			this.render(P.workspace.todos)
 		} else {
@@ -106,6 +106,8 @@ class TodosGroup extends P.Group {
 		this.query().then(data => {
 			P.workspace.todos = data
 			this.render(data)
+		}).catch(e => {
+			alert(e)
 		})
 	}
 	query() {
@@ -134,7 +136,7 @@ class TodosGroup extends P.Group {
 		this.group.innerHTML = "";
 		for (let i = 0; i < todos.length; i++) {
 			const fields = todos[i].fields
-
+			console.log(todos[i])
 			const date = new Date(fields.date.value)
 			const initDate = new Date(fields.initDate.value)
 
@@ -185,6 +187,8 @@ class TodosGroup extends P.Group {
 				}
 			}, 500))
 		}
+		this.group.insertAdjacentHTML("beforeend", "<div class=\"span\">Loading...</div>")
+		this.group.querySelector(".span").innerHTML = `You have ${todos.length} todo${todos.length > 1 ? "s" : ""}`
 	}
 	todoClick(todo, el) {
 		el.addEventListener("click", e => {
@@ -197,9 +201,15 @@ class TodosGroup extends P.Group {
 				P.workspace.refresh = setInterval(this.fetch.bind(this), 5000)
 			}
 		})
-		el.querySelector(".delete").addEventListener("click", e => { this.deleteTodo(todo) })
-		el.querySelector(".done").addEventListener("click", e => { this.deleteTodo(todo) })
-		el.querySelector(".edit").addEventListener("click", e => { this.editTodo(todo) })
+		el.querySelector(".delete").addEventListener("click", e => {
+			this.deleteTodo(todo)
+		})
+		el.querySelector(".done").addEventListener("click", e => {
+			this.deleteTodo(todo)
+		})
+		el.querySelector(".edit").addEventListener("click", e => {
+			this.editTodo(todo)
+		})
 	}
 	deleteTodo(record) {
 		const i = P.workspace.todos.indexOf(record)
@@ -307,10 +317,14 @@ class NewView extends P.ViewController {
 		this.view.querySelector(".date").value = ""
 	}
 	submitTodo() {
+		this.view.style.opacity = ".5"
 		const name = this.view.querySelector(".name").value
 		const desc = this.view.querySelector(".desc").value
 		const date = new Date(this.view.querySelector(".date").value)
-
+		if (name == "" || this.view.querySelector(".date").value == "") {
+			alert("Error: fill everything")
+			window.location = ""
+		}
 		const record = {
 			recordType: "ToDos",
 			fields: {

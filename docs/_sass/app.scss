@@ -65,13 +65,14 @@ a {
 		transition: all 500ms ease-in-out;
 	}
 }
-
+.app {
+	min-height: calc(100vh - 150px);
+}
 .todos {
 	position: absolute;
 	width: calc(100% - 100px);
 	background-color: white;
 	top: 150px;
-	min-height: calc(100vh - 150px);
 	display: flex;
 	justify-content: center;
 	flex-direction: row;
@@ -169,8 +170,15 @@ a {
 			}
 		}
 	}
+	.span {
+		padding: 30px;
+		box-sizing: border-box;
+		margin: 0 auto;
+		color: lightgrey;
+		width: 100%;
+		text-align: center;
+	}
 }
-
 .new {
 	position: absolute;
 	top: 150px;
