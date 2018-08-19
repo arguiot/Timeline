@@ -21,8 +21,6 @@
 		682EDB8B211A079100304C82 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682EDB8A211A079100304C82 /* TodoCell.swift */; };
 		682EDB8D211A08E800304C82 /* ToDos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687CAE722105D8B400BAF716 /* ToDos.swift */; };
 		682EDB94211A1DAD00304C82 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 682EDB93211A1DAD00304C82 /* CloudKit.framework */; };
-		6831A9432124DDFC00AA2CA2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6831A9422124DDFB00AA2CA2 /* Alamofire.framework */; };
-		6831A9442124DDFC00AA2CA2 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6831A9422124DDFB00AA2CA2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		685811ED21027443007B6DF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685811EC21027443007B6DF3 /* AppDelegate.swift */; };
 		685811EF21027443007B6DF3 /* Landing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685811EE21027443007B6DF3 /* Landing.swift */; };
 		685811F221027443007B6DF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 685811F021027443007B6DF3 /* Main.storyboard */; };
@@ -138,7 +136,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				6858120221039764007B6DF3 /* Hero.framework in Embed Frameworks */,
-				6831A9442124DDFC00AA2CA2 /* Alamofire.framework in Embed Frameworks */,
 				6893789B2110FE2D003EACAD /* OneSignal.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -165,7 +162,6 @@
 		682EDB90211A1B1A00304C82 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		682EDB92211A1DA800304C82 /* watchOS Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "watchOS Extension.entitlements"; sourceTree = "<group>"; };
 		682EDB93211A1DAD00304C82 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.3.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
-		6831A9422124DDFB00AA2CA2 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		685811E921027443007B6DF3 /* Timeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		685811EC21027443007B6DF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		685811EE21027443007B6DF3 /* Landing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landing.swift; sourceTree = "<group>"; };
@@ -231,7 +227,6 @@
 				6858120121039764007B6DF3 /* Hero.framework in Frameworks */,
 				687CAE772105DE0200BAF716 /* CloudKit.framework in Frameworks */,
 				6893789A2110FE2D003EACAD /* OneSignal.framework in Frameworks */,
-				6831A9432124DDFC00AA2CA2 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +278,6 @@
 		685811E021027443007B6DF3 = {
 			isa = PBXGroup;
 			children = (
-				6831A9422124DDFB00AA2CA2 /* Alamofire.framework */,
 				689378992110FE2D003EACAD /* OneSignal.framework */,
 				6858120021039764007B6DF3 /* Hero.framework */,
 				685811EB21027443007B6DF3 /* Timeline */,

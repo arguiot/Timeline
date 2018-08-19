@@ -3,7 +3,7 @@ const P = new ProType()
 class MainView extends P.ViewController {
 	preload() {
 		CloudKit.configure({
-			locale: 'en-us',
+			locale: navigator.language,
 
 			containers: [{
 
