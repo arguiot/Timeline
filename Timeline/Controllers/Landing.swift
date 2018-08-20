@@ -40,13 +40,13 @@ class Landing: UIViewController {
         if todos.isEmpty {
             nTodos.text = "Loading..."
             loadData()
+        } else {
+            nTodos.text = "You have \(todos.count) \(todos.count <= 1 ? "todo" : "todos")"
         }
         
 
         timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.loadData), userInfo: nil, repeats: true) // Refresh every 5 seconds
         
-        
-        nTodos.text = "You have \(todos.count) \(todos.count <= 1 ? "todo" : "todos")"
         
     }
 
