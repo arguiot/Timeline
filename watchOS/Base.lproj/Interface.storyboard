@@ -15,6 +15,9 @@
         <array key="Inter-UI-Medium.ttf">
             <string>InterUI-Medium</string>
         </array>
+        <array key="Inter-UI-Regular.ttf">
+            <string>InterUI-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Interface Controller-->
@@ -101,7 +104,9 @@
             <objects>
                 <notificationController id="YCC-NB-fut">
                     <items>
-                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW">
+                            <fontDescription key="font" name="InterUI-Regular" family="Inter UI" pointSize="16"/>
+                        </label>
                     </items>
                     <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
                     <connections>
