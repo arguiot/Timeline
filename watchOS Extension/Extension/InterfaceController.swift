@@ -20,6 +20,7 @@ class InterfaceController: WKInterfaceController {
         
         // Configure interface objects here.
         loadTodos()
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.loadTodos), userInfo: nil, repeats: true) // Refresh every 5 seconds
     }
     
     override func willActivate() {
@@ -65,7 +66,9 @@ class InterfaceController: WKInterfaceController {
         }
 //        completionHandler([ToDos(name: "test", desc: "test", date: Date(timeIntervalSince1970: 1534629600), initDate: Date(timeIntervalSince1970: 1533667446), record: nil)])
     }
-    func loadTodos() {
+    
+    var timer = Timer()
+    @objc func loadTodos() {
         fetchItems { (data) in
             self.todos = data
             
