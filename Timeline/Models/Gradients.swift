@@ -10,18 +10,14 @@ import UIKit
 
 class GradientsColor {
     var gradients: [[CGColor]] = [
-        [#colorLiteral(red: 0.9019607843, green: 0.8549019608, blue: 0.8549019608, alpha: 1), #colorLiteral(red: 0.1529411765, green: 0.2509803922, blue: 0.2745098039, alpha: 1)],
-        [#colorLiteral(red: 0.3647058824, green: 0.2549019608, blue: 0.3411764706, alpha: 1), #colorLiteral(red: 0.6588235294, green: 0.7921568627, blue: 0.7294117647, alpha: 1)],
-        [#colorLiteral(red: 0.8666666667, green: 0.8392156863, blue: 0.9529411765, alpha: 1), #colorLiteral(red: 0.9803921569, green: 0.6745098039, blue: 0.6588235294, alpha: 1)],
-        [#colorLiteral(red: 0.07058823529, green: 0.7607843137, blue: 0.9137254902, alpha: 1), #colorLiteral(red: 0.9647058824, green: 0.3098039216, blue: 0.3490196078, alpha: 1)],
-        [#colorLiteral(red: 0.7254901961, green: 0.168627451, blue: 0.1529411765, alpha: 1), #colorLiteral(red: 0.08235294118, green: 0.3960784314, blue: 0.7529411765, alpha: 1)],
-        [#colorLiteral(red: 0.2156862745, green: 0.231372549, blue: 0.2666666667, alpha: 1), #colorLiteral(red: 0.2588235294, green: 0.5254901961, blue: 0.9568627451, alpha: 1)],
-        [#colorLiteral(red: 0.1607843137, green: 0.5019607843, blue: 0.7254901961, alpha: 1), #colorLiteral(red: 0.4274509804, green: 0.8352941176, blue: 0.9803921569, alpha: 1)],
-        [#colorLiteral(red: 0.2862745098, green: 0.1960784314, blue: 0.2509803922, alpha: 1), #colorLiteral(red: 1, green: 0, blue: 0.6, alpha: 1)],
-        [#colorLiteral(red: 0.9450980392, green: 0.1529411765, blue: 0.06666666667, alpha: 1), #colorLiteral(red: 0.9607843137, green: 0.6862745098, blue: 0.09803921569, alpha: 1)],
-        [#colorLiteral(red: 0.06666666667, green: 0.6, blue: 0.5568627451, alpha: 1), #colorLiteral(red: 0.2196078431, green: 0.937254902, blue: 0.4901960784, alpha: 1)],
-        [#colorLiteral(red: 0.1215686275, green: 0.6352941176, blue: 1, alpha: 1), #colorLiteral(red: 0.6509803922, green: 1, blue: 0.7960784314, alpha: 1)],
-        [#colorLiteral(red: 0.1882352941, green: 0.9098039216, blue: 0.7490196078, alpha: 1), #colorLiteral(red: 1, green: 0.5098039216, blue: 0.2078431373, alpha: 1)]
+        [#colorLiteral(red: 0.9254901961, green: 0.1843137255, blue: 0.2941176471, alpha: 1), #colorLiteral(red: 0, green: 0.6235294118, blue: 1, alpha: 1)],
+        [#colorLiteral(red: 0.9607843137, green: 0.6862745098, blue: 0.09803921569, alpha: 1), #colorLiteral(red: 0.9450980392, green: 0.1529411765, blue: 0.06666666667, alpha: 1)],
+        [#colorLiteral(red: 0.3215686275, green: 0.7607843137, blue: 0.2039215686, alpha: 1), #colorLiteral(red: 0.02352941176, green: 0.09019607843, blue: 0, alpha: 1)],
+        [#colorLiteral(red: 0, green: 0.9490196078, blue: 0.9960784314, alpha: 1), #colorLiteral(red: 0.3098039216, green: 0.6745098039, blue: 0.9960784314, alpha: 1)],
+        [#colorLiteral(red: 0.4, green: 0.4941176471, blue: 0.9176470588, alpha: 1), #colorLiteral(red: 0.462745098, green: 0.2941176471, blue: 0.6352941176, alpha: 1)],
+        [#colorLiteral(red: 0, green: 0.6196078431, blue: 0.9921568627, alpha: 1), #colorLiteral(red: 0.1647058824, green: 0.9607843137, blue: 0.5960784314, alpha: 1)],
+        [#colorLiteral(red: 0.768627451, green: 0.4431372549, blue: 0.9607843137, alpha: 1), #colorLiteral(red: 0.9803921569, green: 0.4431372549, blue: 0.8039215686, alpha: 1)],
+        [#colorLiteral(red: 0.9764705882, green: 0.9411764706, blue: 0.2784313725, alpha: 1), #colorLiteral(red: 0.05882352941, green: 0.8470588235, blue: 0.3137254902, alpha: 1)]
     ]
     func randomColors() -> [CGColor] {
         let i = Int(UInt64.random(lower: 0, upper: UInt64(gradients.count)))
