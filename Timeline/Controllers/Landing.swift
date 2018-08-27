@@ -76,6 +76,7 @@ class Landing: UIViewController {
             }
             
             guard let records = records else { return }
+            let duplicate = self.todos
             self.todos = [] // Emptying todos
             for record in records {
                 self.todos.append(ToDos(name: record.value(forKey: "name") as! String,
@@ -85,8 +86,9 @@ class Landing: UIViewController {
                                         record: record.recordID))
             }
             DispatchQueue.main.async {
-                self.TableView.reloadData()
-                
+                if duplicate.elementsEqual(self.todos) {
+                    self.TableView.reloadData()
+                }
                 self.nTodos.text = "You have \(self.todos.count) \(self.todos.count <= 1 ? "todo" : "todos")"
             }
         }
