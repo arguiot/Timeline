@@ -95,7 +95,18 @@ class InterfaceController: WKInterfaceController {
                     
                     row.progress.setText("\(String(p))%")
                     
-                }
+                    if p > 100 {
+                        self.deleteTodo(td: data[i])
+                    }
+                 }
+            }
+        }
+    }
+    
+    func deleteTodo(td: ToDos) {
+        db.delete(withRecordID: (td.record)!) { (record, error) in
+            if error != nil {
+                self.presentAlert(withTitle: "Error", message: "Log: \(String(describing: error))", preferredStyle: .alert, actions: [WKAlertAction(title: "Cancel", style: .cancel) {}])
             }
         }
     }

@@ -8,6 +8,7 @@
 
 import Foundation
 import OneSignal
+import UIKit
 
 class Notifier {
     let id = OneSignal.getPermissionSubscriptionState().subscriptionStatus.userId
