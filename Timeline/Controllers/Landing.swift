@@ -86,7 +86,7 @@ class Landing: UIViewController {
                                         record: record.recordID))
             }
             DispatchQueue.main.async {
-                if duplicate.elementsEqual(self.todos) {
+                if !duplicate.elementsEqual(self.todos) {
                     self.TableView.reloadData()
                 }
                 self.nTodos.text = "You have \(self.todos.count) \(self.todos.count <= 1 ? "todo" : "todos")"
