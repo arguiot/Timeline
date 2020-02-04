@@ -2,7 +2,7 @@
 ---
 document.body.addEventListener("scroll", e => {
 	let logo = document.querySelector(".logo")
-	if (window.scrollY > 10) {
+	if (document.body.scrollTop > 10) {
 		logo.style.position = "fixed"
 		logo.style.top = "12.5px"
 		logo.style.left = "10px"
